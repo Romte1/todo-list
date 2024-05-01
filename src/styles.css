@@ -12,9 +12,9 @@
 body {
   min-height: 100dvh;
   font-family: 'Montserrat';
-  display:flex;
-  flex-direction: column;
+  display:grid;
   background-color: rgb(233, 233, 233);
+  
 
   li, ul, ol {
     list-style: none;
@@ -23,4 +23,22 @@ body {
 
 header {
     background-color: red;
+    max-height: 200px;
+}
+
+.nav {
+  background-color: greenyellow;
+}
+
+.content {
+  background-color: bisque;
+}
+
+footer {
+  background-color: rgb(129, 128, 131);
+  max-height: 150px;
+  align-self: flex-end;
+  padding:16px;
+  color:beige;
+  text-align: center;
 }
