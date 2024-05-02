@@ -14,6 +14,9 @@ body {
   font-family: 'Montserrat';
   display:grid;
   background-color: rgb(233, 233, 233);
+  grid-template-columns: 400px auto;
+  grid-template-rows: auto 1fr auto;
+
   
 
   li, ul, ol {
@@ -22,8 +25,13 @@ body {
 }
 
 header {
-    background-color: red;
-    max-height: 200px;
+    grid-column: span 2;
+    background-color: rgb(66, 56, 56);
+    max-height: 150px;
+    align-self: flex-start;
+    padding:16px;
+    text-align: center;
+    color:beige;
 }
 
 .nav {
@@ -35,6 +43,7 @@ header {
 }
 
 footer {
+  grid-column: span 2;
   background-color: rgb(129, 128, 131);
   max-height: 150px;
   align-self: flex-end;
