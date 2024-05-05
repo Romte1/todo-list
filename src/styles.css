@@ -18,7 +18,7 @@ body {
   font-family: 'Montserrat';
   display:grid;
   background-color: rgb(233, 233, 233);
-  grid-template-columns: 400px auto;
+  grid-template-columns: minmax(100px, 400px) minmax(300px, auto);
   grid-template-rows: auto 1fr auto;
   padding: 0 32px;
   gap:16px;
