@@ -9,7 +9,7 @@
 }
 
 :root {
-  --custom-border: 3px solid rgb(169, 136, 248);
+  --custom-border: 2px solid rgb(160, 156, 168);
 }
 
 
@@ -17,7 +17,7 @@ body {
   min-height: 100dvh;
   font-family: 'Montserrat';
   display:grid;
-  background-color: rgb(233, 233, 233);
+  background-color: rgb(57, 72, 199);
   grid-template-columns: minmax(100px, 400px) minmax(300px, auto);
   grid-template-rows: auto 1fr auto;
   padding: 0 32px;
@@ -32,18 +32,18 @@ body {
 
 header {
     grid-column: span 2;
-    background-color: rgb(66, 56, 56);
+    background-color: rgb(209, 208, 208);
     max-height: 150px;
     align-self: flex-start;
     padding:16px;
     text-align: center;
-    color:beige;
+    color:rgb(0, 0, 0);
     border: var(--custom-border);
     border-radius: 8px;
 }
 
 .nav {
-  background-color: rgb(250, 203, 218);
+  background-color: rgb(241, 241, 241);
   border: var(--custom-border);
   border-radius: 8px;
   display:flex;
@@ -64,7 +64,7 @@ header {
 }
 
 .content {
-  background-color: bisque;
+  background-color: rgb(241, 241, 241);
   border: var(--custom-border);
   border-radius: 8px;
 }
