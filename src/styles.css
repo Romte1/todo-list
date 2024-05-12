@@ -63,6 +63,16 @@ header {
     
     &:hover{
       background-color: rgba(0, 0, 0, 0.1);
+      transition:0.2s;
+    }
+
+    >p{
+      cursor: pointer;
+      &:hover {      
+        scale: 1.1;
+        transition: 0.2s;
+      }
+
     }
   }
 }
