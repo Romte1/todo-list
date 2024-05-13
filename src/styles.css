@@ -52,13 +52,12 @@ header {
   justify-content: flex-start;
 
   h2{
-    text-align: center;
+    padding-left: 15%;
   }
   div {
     height: 40px;
     width: 100%;
     display:flex;
-    justify-content: center;
     align-items: center;
     
     &:hover{
@@ -68,6 +67,8 @@ header {
 
     >p{
       cursor: pointer;
+      padding-left: 25%;
+
       &:hover {      
         scale: 1.1;
         transition: 0.2s;
