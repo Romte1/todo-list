@@ -2,6 +2,7 @@ function home () {
     const content = document.querySelector('.content');
     const navigator = document.querySelector('.nav');
     const navMenuTitle1 = document.createElement('h2');
+    const navMenuTitle2 = document.createElement('h2');
     const navTodayDiv = document.createElement('div');
     const navThisWeekDiv = document.createElement('div');
     const navAllTasksDiv = document.createElement('div');
@@ -12,6 +13,7 @@ function home () {
     const navAddNewPorjectP = document.createElement('p');
 
     navMenuTitle1.textContent = 'Tasks';
+    navMenuTitle2.textContent = 'Projects';
 
     navTodayP.textContent = 'Today';
     navThisWeekP.textContent = 'This Week';
@@ -31,6 +33,8 @@ function home () {
     navigator.appendChild(navTodayDiv);
     navigator.appendChild(navThisWeekDiv);
     navigator.appendChild(navAllTasksDiv);
+
+    navigator.appendChild(navMenuTitle2);
 
     navigator.appendChild(navAddNewProjectDiv);
 
