@@ -1,3 +1,4 @@
+import newProject from './projectManagment';
 function home () {
     const content = document.querySelector('.content');
     const navigator = document.querySelector('.nav');
@@ -12,7 +13,7 @@ function home () {
     const navAllTasksP = document.createElement('p');
     const navCompletedTasksP = document.createElement('p');
     const navAddNewProjectDiv = document.createElement('div');
-    const navAddNewPorjectP = document.createElement('p');
+    const navAddNewProjectP = document.createElement('p');
 
     navMenuTitle1.textContent = 'Tasks';
     navMenuTitle2.textContent = 'Projects';
@@ -22,14 +23,14 @@ function home () {
     navAllTasksP.textContent = 'All Tasks';
     navCompletedTasksP.textContent = 'Completed Tasks';
 
-    navAddNewPorjectP.textContent = 'Add New Project';
+    navAddNewProjectP.textContent = 'Add New Project';
 
     navTodayDiv.appendChild(navTodayP);
     navThisWeekDiv.appendChild(navThisWeekP);
     navAllTasksDiv.appendChild(navAllTasksP);
     navCompletedTasksDiv.appendChild(navCompletedTasksP);
 
-    navAddNewProjectDiv.appendChild(navAddNewPorjectP);
+    navAddNewProjectDiv.appendChild(navAddNewProjectP);
     
 
     navigator.appendChild(navMenuTitle1);
@@ -42,6 +43,11 @@ function home () {
     navigator.appendChild(navMenuTitle2);
 
     navigator.appendChild(navAddNewProjectDiv);
+
+
+    navAddNewProjectP.addEventListener('click', () => {
+        newProject();
+    })
 
 
 }
