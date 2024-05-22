@@ -85,6 +85,11 @@ header {
   border-radius: 8px;
 }
 
+.modal {
+  display: flex;
+  flex-direction: column;
+}
+
 footer {
   grid-column: span 2;
   background-color: rgb(26, 26, 26);
