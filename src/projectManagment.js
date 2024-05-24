@@ -16,6 +16,10 @@ function newProject() {
     newProjectIpt.setAttribute('id', 'Name');
     newProjectIpt.setAttribute('name', 'Name');
 
+    newProjectBtn.addEventListener ('click' , () => {
+        newProjectModal.remove();
+    })
+
     newProjectModal.setAttribute('class', 'modal');
 
     newProjectModal.appendChild(newProjectP);
