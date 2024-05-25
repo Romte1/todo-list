@@ -16,9 +16,20 @@ function newProject() {
     newProjectIpt.setAttribute('id', 'Name');
     newProjectIpt.setAttribute('name', 'Name');
 
-    newProjectBtn.addEventListener ('click' , () => {
-        newProjectModal.remove();
-    })
+    addEventListener ('click' , ({target}) => {
+        if (target === newProjectBtn ) {
+            newProjectModal.remove();
+        }
+    });
+
+
+    // removes modal when pressin escape key
+    document.addEventListener('keyup',function(e){
+        if (e.key === "Escape") { 
+            
+            newProjectModal.remove();
+        }
+    });
 
     newProjectModal.setAttribute('class', 'modal');
 
