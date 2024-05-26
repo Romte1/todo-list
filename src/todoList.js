@@ -1,4 +1,4 @@
-import newProject from './projectManagment';
+import newProject from './projectManagement';
 function home () {
     const content = document.querySelector('.content');
     const navigator = document.querySelector('.nav');

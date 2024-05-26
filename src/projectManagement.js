@@ -18,6 +18,7 @@ function newProject() {
 
     addEventListener ('click' , ({target}) => {
         if (target === newProjectBtn ) {
+            alert(newProjectIpt.value);
             newProjectModal.remove();
         }
     });
