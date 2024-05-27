@@ -1,4 +1,6 @@
-function newProject() {
+    const Projects = [];
+    
+    function newProject() {
     const body = document.querySelector('body');
     const newProjectModal = document.createElement('dialog');
     const newProjectP = document.createElement('p');
@@ -19,6 +21,9 @@ function newProject() {
     addEventListener ('click' , ({target}) => {
         if (target === newProjectBtn ) {
             alert(newProjectIpt.value);
+            var project = new Project(newProjectIpt.value);
+            Projects.push(project);
+            console.log(Projects);
             newProjectModal.remove();
         }
     });
@@ -43,6 +48,14 @@ function newProject() {
 
     newProjectModal.showModal();
 
-}
+    }
+
+    class Project {
+        constructor (name) {
+            this.name = name;
+        }
+    }
+
+
 
 export default newProject;
