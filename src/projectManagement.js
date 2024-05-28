@@ -1,4 +1,9 @@
     const Projects = [];
+
+    function defaultProject() {
+        const defaultProject = new Project('Default Project');
+        Projects.push(defaultProject);
+    }
     
     function newProject() {
     const body = document.querySelector('body');
@@ -20,10 +25,9 @@
 
     addEventListener ('click' , ({target}) => {
         if (target === newProjectBtn ) {
-            alert(newProjectIpt.value);
             var project = new Project(newProjectIpt.value);
             Projects.push(project);
-            console.log(Projects);
+            console.table(Projects);
             newProjectModal.remove();
         }
     });
@@ -55,6 +59,8 @@
             this.name = name;
         }
     }
+
+    defaultProject();
 
 
 
