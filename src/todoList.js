@@ -24,6 +24,7 @@ function home () {
     navCompletedTasksP.textContent = 'Completed Tasks';
 
     navAddNewProjectP.textContent = 'Add New Project';
+    navAddNewProjectP.setAttribute('class','newProject');
 
     navTodayDiv.appendChild(navTodayP);
     navThisWeekDiv.appendChild(navThisWeekP);

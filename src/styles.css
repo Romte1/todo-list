@@ -76,6 +76,11 @@ header {
       }
 
     }
+
+    >.newProject {
+      font-weight: 700;
+      color:rgb(78, 204, 74);
+    }
   }
 }
 
