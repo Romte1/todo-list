@@ -24,10 +24,20 @@
     newProjectIpt.setAttribute('name', 'Name');
 
     addEventListener ('click' , ({target}) => {
-        if (target === newProjectBtn ) {
+
+        if (target === newProjectBtn && newProjectIpt.value !== '' ) {
+
+            for (let i=0; i<Projects.length; i++) {
+                if (Projects[i].name === newProjectIpt.value) {
+                    console.log('You cannot have two projects with the exact same name!');
+                    console.log(Projects.length);
+                    newProjectModal.remove();
+                    return;
+                }
+            }
             var project = new Project(newProjectIpt.value);
             Projects.push(project);
-            console.table(Projects);
+            console.log(Projects.length);
             newProjectModal.remove();
         }
     });
