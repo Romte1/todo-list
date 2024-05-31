@@ -14,6 +14,7 @@ function home () {
     const navCompletedTasksP = document.createElement('p');
     const navAddNewProjectDiv = document.createElement('div');
     const navAddNewProjectP = document.createElement('p');
+    const navProjects = document.createElement('div');
 
     navMenuTitle1.textContent = 'Tasks';
     navMenuTitle2.textContent = 'Projects';
@@ -25,6 +26,8 @@ function home () {
 
     navAddNewProjectP.textContent = 'Add New Project';
     navAddNewProjectP.setAttribute('class','newProject');
+
+    navProjects.setAttribute('class','projects');
 
     navTodayDiv.appendChild(navTodayP);
     navThisWeekDiv.appendChild(navThisWeekP);
@@ -44,6 +47,7 @@ function home () {
     navigator.appendChild(navMenuTitle2);
 
     navigator.appendChild(navAddNewProjectDiv);
+    navigator.appendChild(navProjects);
 
 
     navAddNewProjectP.addEventListener('click', () => {
