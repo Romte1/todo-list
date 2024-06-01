@@ -39,6 +39,7 @@
             Projects.push(project);
             console.log(Projects.length);
             newProjectModal.remove();
+            updateProjectsList();
         }
     });
 
@@ -61,6 +62,12 @@
     body.appendChild(newProjectModal);
 
     newProjectModal.showModal();
+
+    }
+
+    function updateProjectsList() {
+        const navProjects = document.querySelector('.projects');
+        navProjects.textContent ='hola';
 
     }
 
