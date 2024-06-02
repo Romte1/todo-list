@@ -57,7 +57,7 @@ header {
   }
 
   >div {
-    height: 40px;
+    height: 35px;
     width: 100%;
     display:flex;
     align-items: center;
@@ -85,9 +85,31 @@ header {
   }
 
   .projects {
-    background-color: red;
+    display:flex;
+    flex-direction: column;
+
     >div {
-      background-color: black;
+      min-height: 35px;
+      width: 100%;
+      display:flex;
+      align-items: center;
+      
+      &:hover{
+        background-color: rgba(0, 0, 0, 0.1);
+        transition:0.2s;
+      }
+  
+      >p{
+        cursor: pointer;
+        padding-left: 30%;
+  
+        &:hover {      
+          scale: 1.1;
+          transition: 0.2s;
+        }
+  
+      }
+
     }
   }
 

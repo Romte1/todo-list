@@ -1,9 +1,4 @@
     const Projects = [];
-
-    function defaultProject() {
-        const defaultProject = new Project('Default Project');
-        Projects.push(defaultProject);
-    }
     
     function newProject() {
     const body = document.querySelector('body');
@@ -66,8 +61,25 @@
     }
 
     function updateProjectsList() {
+
         const navProjects = document.querySelector('.projects');
-        navProjects.textContent ='hola';
+
+        if (Projects.length > 1) {
+        navProjects.querySelectorAll('div').forEach(div => {
+            navProjects.removeChild(div);
+        });
+        }
+
+        for (let i = 0; i<Projects.length; i++) {
+            let projectDiv = document.createElement('div');
+            let projectP = document.createElement('p');
+
+            projectP.textContent = Projects[i].name;
+            
+            projectDiv.appendChild(projectP);
+
+            navProjects.appendChild(projectDiv);
+        }
 
     }
 
@@ -77,7 +89,17 @@
         }
     }
 
-    defaultProject();
+    function defaultProject() {
+        const defaultProject = new Project('Default Project');
+        Projects.push(defaultProject);
+
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Your code here
+        defaultProject();
+        updateProjectsList();
+    });
 
 
 
