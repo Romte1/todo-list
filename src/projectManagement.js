@@ -92,13 +92,12 @@
     function defaultProject() {
         const defaultProject = new Project('Default Project');
         Projects.push(defaultProject);
+        updateProjectsList();
 
     }
 
     document.addEventListener('DOMContentLoaded', function() {
-        // Your code here
         defaultProject();
-        updateProjectsList();
     });
 
 
