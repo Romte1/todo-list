@@ -6,6 +6,7 @@
     const newProjectP = document.createElement('p');
     const newProjectLbl = document.createElement('label');
     const newProjectIpt = document.createElement('input');
+    const newProjectMsg = document.createElement('label');
     const newProjectBtn = document.createElement('button');
 
     newProjectP.textContent = 'New Project';
@@ -24,9 +25,9 @@
 
             for (let i=0; i<Projects.length; i++) {
                 if (Projects[i].name === newProjectIpt.value) {
-                    console.log('You cannot have two projects with the exact same name!');
+                    newProjectMsg.setAttribute('class', 'error');
+                    newProjectMsg.textContent = 'Projects must have an unique name!';
                     console.log(Projects.length);
-                    newProjectModal.remove();
                     return;
                 }
             }
@@ -52,6 +53,7 @@
     newProjectModal.appendChild(newProjectP);
     newProjectModal.appendChild(newProjectLbl);
     newProjectModal.appendChild(newProjectIpt);
+    newProjectModal.appendChild(newProjectMsg);
     newProjectModal.appendChild(newProjectBtn);
 
     body.appendChild(newProjectModal);

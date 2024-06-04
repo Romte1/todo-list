@@ -125,7 +125,7 @@ header {
 dialog.modal {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto auto auto;
   gap: 8px;
   padding:16px;
   top: 50%;
@@ -159,11 +159,24 @@ dialog.modal {
     padding-left: 2px;
     align-self: center;
   }
+  >label.error {
+    grid-row: 3;
+    grid-column: 1/3;
+    width: 180px;
+    justify-self: center;
+    font-size: 11px;
+    font-weight: 700;
+    background-color: rgba(255, 37, 37, 0.5);
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: 1px solid black;
+    color:white;
+  }
 
   >button {
       padding: 8px 16px;
       border-radius: 8px;
-      grid-row: 3;
+      grid-row: 4;
       grid-column: 1/3;
 
       &:hover {
