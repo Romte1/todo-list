@@ -18,6 +18,7 @@
     newProjectIpt.setAttribute('type', 'text');
     newProjectIpt.setAttribute('id', 'Name');
     newProjectIpt.setAttribute('name', 'Name');
+    newProjectIpt.setAttribute('maxlength', '15');
 
     addEventListener ('click' , ({target}) => {
 
