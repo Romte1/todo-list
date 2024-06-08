@@ -88,7 +88,7 @@
 
     class Project {
         constructor (name) {
-            this.name = name;
+            this.name = name.charAt(0).toUpperCase() + name.slice(1);
         }
     }
 
