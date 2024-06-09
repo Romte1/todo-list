@@ -76,10 +76,13 @@
         for (let i = 0; i<Projects.length; i++) {
             let projectDiv = document.createElement('div');
             let projectP = document.createElement('p');
+            let projectDel = document.createElement('ion-icon');
 
             projectP.textContent = Projects[i].name;
+            projectDel.setAttribute('name', 'trash-outline');
             
             projectDiv.appendChild(projectP);
+            projectDiv.appendChild(projectDel);
 
             navProjects.appendChild(projectDiv);
         }
