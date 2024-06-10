@@ -80,6 +80,7 @@
 
             projectP.textContent = Projects[i].name;
             projectDel.setAttribute('name', 'trash-outline');
+            projectDel.setAttribute('class', 'del-project');
             
             projectDiv.appendChild(projectP);
             projectDiv.appendChild(projectDel);

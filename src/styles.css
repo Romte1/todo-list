@@ -118,6 +118,15 @@ header {
         display: flex;
         align-items: center;
       }
+      
+      .del-project {
+        padding:4px;
+
+        &:hover {
+          background-color: red;
+          border-radius: 10px;
+        }
+      }
 
     }
   }
