@@ -123,8 +123,10 @@ header {
         padding:4px;
 
         &:hover {
-          background-color: red;
-          border-radius: 10px;
+          background-color: rgb(230, 55, 55);
+          border-radius: 8px;
+          color:white;
+          transition: 0.2s;
         }
       }
 
