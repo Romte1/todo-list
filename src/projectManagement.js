@@ -81,6 +81,10 @@
 
             projectP.textContent = Projects[i].name;
 
+            projectP.addEventListener('click', () => {
+                alert(Projects[i].name);
+            })
+
             projectEdit.setAttribute('name','pencil-outline');
             projectEdit.setAttribute('class','edit-project');
 

@@ -97,7 +97,7 @@ header {
       justify-content: flex-end;
       gap:4px;
       cursor: pointer;
-      padding: 4px;
+      padding: 0 4px;
       
       &:hover{
         background-color: rgba(0, 0, 0, 0.1);
@@ -110,7 +110,7 @@ header {
         height: 100%;
         display: flex;
         align-items: center;
-        margin-right:auto;
+        flex-grow: 1;
       }
       
       .del-project {
