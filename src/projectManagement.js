@@ -1,4 +1,4 @@
-    const Projects = [];
+    let Projects = [];
     
     function newProject() {
     const body = document.querySelector('body');
@@ -67,11 +67,10 @@
 
         const navProjects = document.querySelector('.projects');
 
-        if (Projects.length > 1) {
         navProjects.querySelectorAll('div').forEach(div => {
             navProjects.removeChild(div);
         });
-        }
+
 
         for (let i = 0; i<Projects.length; i++) {
             let projectDiv = document.createElement('div');
@@ -90,6 +89,14 @@
 
             projectDel.setAttribute('name', 'trash-outline');
             projectDel.setAttribute('class', 'del-project');
+
+            projectDel.addEventListener('click', () => {
+                let name = Projects[i].name;
+                console.log(Projects[i].name);
+                Projects = Projects.filter(item => item.name !== name);
+                updateProjectsList();
+                console.log(Projects);
+            })
             
             projectDiv.appendChild(projectP);
             projectDiv.appendChild(projectEdit);
