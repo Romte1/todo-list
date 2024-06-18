@@ -109,7 +109,14 @@
     function deleteProject(name) {
         const body = document.querySelector('body');
         const deleteProjectModal = document.createElement('dialog');
+        const deleteProjectP = document.createElement('p');
+
         deleteProjectModal.setAttribute('class', 'modal');
+        deleteProjectP.textContent = 'Are you sure you want to delete this project?';
+
+
+
+        deleteProjectModal.appendChild(deleteProjectP);
         body.appendChild(deleteProjectModal);
         deleteProjectModal.showModal();
 
