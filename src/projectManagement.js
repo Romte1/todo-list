@@ -107,6 +107,12 @@
     }
 
     function deleteProject(name) {
+        const body = document.querySelector('body');
+        const deleteProjectModal = document.createElement('dialog');
+        deleteProjectModal.setAttribute('class', 'modal');
+        body.appendChild(deleteProjectModal);
+        deleteProjectModal.showModal();
+
         Projects = Projects.filter(item => item.name !== name);
         updateProjectsList();
         console.log(Projects);
