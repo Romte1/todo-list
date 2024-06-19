@@ -110,13 +110,23 @@
         const body = document.querySelector('body');
         const deleteProjectModal = document.createElement('dialog');
         const deleteProjectP = document.createElement('p');
+        const deleteProjectConfirmButton = document.createElement('button');
+        const deleteProjectCancelButton = document.createElement('button');
 
-        deleteProjectModal.setAttribute('class', 'modal');
-        deleteProjectP.textContent = 'Are you sure you want to delete this project?';
+        deleteProjectModal.setAttribute('class', 'modal-delete-project');
+        deleteProjectP.textContent = 'This project will be deleted';
+
+        deleteProjectConfirmButton.textContent = 'Confirm';
+        deleteProjectCancelButton.textContent = 'Cancel';
+
+        deleteProjectConfirmButton.setAttribute('class', 'btn-confirm');
+        deleteProjectCancelButton.setAttribute('class', 'btn-cancel');
 
 
 
         deleteProjectModal.appendChild(deleteProjectP);
+        deleteProjectModal.appendChild(deleteProjectConfirmButton);
+        deleteProjectModal.appendChild(deleteProjectCancelButton);
         body.appendChild(deleteProjectModal);
         deleteProjectModal.showModal();
 
