@@ -218,7 +218,7 @@ dialog.modal-delete-project {
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
-  gap: 8px;
+  gap: 16px;
   padding:16px;
   top: 50%;
   left: 50%;
@@ -243,10 +243,12 @@ dialog.modal-delete-project {
       border-radius: 8px;
       grid-row: 2;
       grid-column: 1;
+      font-weight: 800;
 
       &:hover {
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: rgb(81, 206, 56);
         cursor: pointer;
+        color: white;
       }
   }
 
@@ -255,10 +257,12 @@ dialog.modal-delete-project {
     border-radius: 8px;
     grid-row: 2;
     grid-column: 2;
+    font-weight: 800;
 
     &:hover {
-      background-color: rgba(0, 0, 0, 0.1);
+      background-color: rgba(255, 10, 10, 0.7);
       cursor: pointer;
+      color: white;
     }
 }
 
