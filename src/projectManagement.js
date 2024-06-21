@@ -133,6 +133,13 @@
         Projects = Projects.filter(item => item.name !== name);
         updateProjectsList();
         console.log(Projects);
+
+        document.addEventListener('keyup',function(e){
+            if (e.key === "Escape") { 
+                
+                deleteProjectModal.remove();
+            }
+        });
     }
 
     class Project {
