@@ -127,13 +127,26 @@
         deleteProjectModal.appendChild(deleteProjectP);
         deleteProjectModal.appendChild(deleteProjectConfirmButton);
         deleteProjectModal.appendChild(deleteProjectCancelButton);
+
+        deleteProjectConfirmButton.addEventListener('click', () => {
+
+            Projects = Projects.filter(item => item.name !== name);
+            deleteProjectModal.remove();
+            updateProjectsList();
+            console.log(Projects);
+            
+        })
+
+
+
         body.appendChild(deleteProjectModal);
         deleteProjectModal.showModal();
 
-        Projects = Projects.filter(item => item.name !== name);
-        updateProjectsList();
-        console.log(Projects);
 
+
+
+
+        // removes modal when pressin escape key
         document.addEventListener('keyup',function(e){
             if (e.key === "Escape") { 
                 
