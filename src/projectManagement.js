@@ -135,7 +135,13 @@
             updateProjectsList();
             console.log(Projects);
             
-        })
+        });
+
+        deleteProjectCancelButton.addEventListener('click',() => {
+            
+            deleteProjectModal.remove();
+
+        });
 
 
 
