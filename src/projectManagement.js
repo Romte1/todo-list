@@ -90,12 +90,18 @@
             projectDel.setAttribute('name', 'trash-outline');
             projectDel.setAttribute('class', 'del-project');
 
+            projectEdit.addEventListener('click', () => {
+                let name = Projects[i].name;
+                console.log(name);
+                editProject(name);
+            });
+
             projectDel.addEventListener('click', () => {
                 let name = Projects[i].name;
                 console.log(name);
                 deleteProject(name);
 
-            })
+            });
             
             projectDiv.appendChild(projectP);
             projectDiv.appendChild(projectEdit);
@@ -104,6 +110,10 @@
             navProjects.appendChild(projectDiv);
         }
 
+    }
+
+    function editProject(name) {
+        alert(name);
     }
 
     function deleteProject(name) {
