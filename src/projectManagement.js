@@ -113,7 +113,19 @@
     }
 
     function editProject(name) {
-        alert(name);
+        const body = document.querySelector('body');
+        const editProjectModal = document.createElement('dialog');
+        const editProjectP = document.createElement('p');
+
+        editProjectModal.setAttribute('class', 'modal-edit-project');
+        editProjectP.textContent = 'Rename project';
+
+        editProjectModal.appendChild(editProjectP);
+
+        body.appendChild(editProjectModal);
+        editProjectModal.showModal();
+
+
     }
 
     function deleteProject(name) {
