@@ -116,11 +116,14 @@
         const body = document.querySelector('body');
         const editProjectModal = document.createElement('dialog');
         const editProjectP = document.createElement('p');
+        const renameProjectIpt = document.createElement('input');
+
 
         editProjectModal.setAttribute('class', 'modal-edit-project');
         editProjectP.textContent = 'Rename project';
 
         editProjectModal.appendChild(editProjectP);
+        editProjectModal.appendChild(renameProjectIpt);
 
         body.appendChild(editProjectModal);
         editProjectModal.showModal();
