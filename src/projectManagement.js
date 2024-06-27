@@ -117,13 +117,23 @@
         const editProjectModal = document.createElement('dialog');
         const editProjectP = document.createElement('p');
         const renameProjectIpt = document.createElement('input');
+        const editProjectConfirmButton = document.createElement('button');
+        const editProjectCancelButton = document.createElement('button');
 
 
         editProjectModal.setAttribute('class', 'modal-edit-project');
         editProjectP.textContent = 'Rename project';
 
+        editProjectConfirmButton.textContent = 'Confirm';
+        editProjectCancelButton.textContent = 'Cancel';
+
+        editProjectConfirmButton.setAttribute('class', 'btn-confirm');
+        editProjectCancelButton.setAttribute('class', 'btn-cancel');
+
         editProjectModal.appendChild(editProjectP);
         editProjectModal.appendChild(renameProjectIpt);
+        editProjectModal.appendChild(editProjectConfirmButton);
+        editProjectModal.appendChild(editProjectCancelButton);
 
         body.appendChild(editProjectModal);
         editProjectModal.showModal();
