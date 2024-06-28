@@ -138,6 +138,14 @@
         body.appendChild(editProjectModal);
         editProjectModal.showModal();
 
+        // removes modal when pressin escape key
+        document.addEventListener('keyup',function(e){
+            if (e.key === "Escape") { 
+                
+                editProjectModal.remove();
+            }
+        });       
+
 
     }
 
