@@ -177,6 +177,7 @@ dialog.modal {
 
   >input {
     width: 128px;
+    height: 28px;
     grid-row: 2;
     outline: none;
     border-radius: 4px;
