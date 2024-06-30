@@ -130,6 +130,10 @@
         editProjectConfirmButton.setAttribute('class', 'btn-confirm');
         editProjectCancelButton.setAttribute('class', 'btn-cancel');
 
+        editProjectCancelButton.addEventListener('click', () => {
+            editProjectModal.remove();
+        });
+
         editProjectModal.appendChild(editProjectP);
         editProjectModal.appendChild(renameProjectIpt);
         editProjectModal.appendChild(editProjectConfirmButton);
