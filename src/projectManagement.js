@@ -124,6 +124,8 @@
         editProjectModal.setAttribute('class', 'modal-edit-project');
         editProjectP.textContent = 'Rename project';
 
+        renameProjectIpt.value = name;
+
         editProjectConfirmButton.textContent = 'Confirm';
         editProjectCancelButton.textContent = 'Cancel';
 
