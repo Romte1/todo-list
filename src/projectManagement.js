@@ -117,6 +117,7 @@
         const editProjectModal = document.createElement('dialog');
         const editProjectP = document.createElement('p');
         const renameProjectIpt = document.createElement('input');
+        const editProjectMsg = document.createElement('label');
         const editProjectConfirmButton = document.createElement('button');
         const editProjectCancelButton = document.createElement('button');
 
@@ -132,12 +133,21 @@
         editProjectConfirmButton.setAttribute('class', 'btn-confirm');
         editProjectCancelButton.setAttribute('class', 'btn-cancel');
 
+        editProjectConfirmButton.addEventListener('click', () => {
+            if (renameProjectIpt.value == '') {
+                editProjectMsg.setAttribute('class', 'error');
+                editProjectMsg.textContent = 'Invalid name!';
+                alert('Invalid name!');
+            }
+        });
+
         editProjectCancelButton.addEventListener('click', () => {
             editProjectModal.remove();
         });
 
         editProjectModal.appendChild(editProjectP);
         editProjectModal.appendChild(renameProjectIpt);
+        editProjectModal.appendChild(editProjectMsg);
         editProjectModal.appendChild(editProjectConfirmButton);
         editProjectModal.appendChild(editProjectCancelButton);
 
