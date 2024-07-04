@@ -138,6 +138,18 @@
                 editProjectMsg.setAttribute('class', 'error');
                 editProjectMsg.textContent = 'Invalid name!';
                 alert('Invalid name!');
+            } else {
+                editProjectMsg.classList.remove('error');
+                editProjectMsg.textContent = '';
+            }
+
+            for (let i=0; i<Projects.length; i++) {
+                if (Projects[i].name.toLowerCase() === renameProjectIpt.value.toLowerCase() && renameProjectIpt.value.toLowerCase() !== name.toLowerCase()) {
+                    editProjectMsg.setAttribute('class', 'error');
+                    editProjectMsg.textContent = "You cannot rename a project to an existing project's name";
+                    console.log(Projects.length);
+                    return;
+                }
             }
         });
 
