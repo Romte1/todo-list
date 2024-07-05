@@ -159,6 +159,7 @@ dialog.modal {
   padding:32px;
   background: rgb(241, 241, 241);
   border-radius: 8px;
+  width: 300px;
 
   &::backdrop {
       backdrop-filter: blur(3px);
@@ -226,6 +227,7 @@ dialog.modal-edit-project {
   padding:32px;
   background: rgb(241, 241, 241);
   border-radius: 8px;
+  width: 300px;
 
   &::backdrop {
       backdrop-filter: blur(3px);
@@ -307,6 +309,7 @@ dialog.modal-delete-project {
   padding:32px;
   background: rgb(241, 241, 241);
   border-radius: 8px;
+  width: 300px;
 
   &::backdrop {
       backdrop-filter: blur(3px);
