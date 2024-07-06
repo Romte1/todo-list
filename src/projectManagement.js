@@ -134,23 +134,32 @@
         editProjectCancelButton.setAttribute('class', 'btn-cancel');
 
         editProjectConfirmButton.addEventListener('click', () => {
-            if (renameProjectIpt.value == '') {
+            let newName = renameProjectIpt.value;
+
+            if (newName == '') {
                 editProjectMsg.setAttribute('class', 'error');
                 editProjectMsg.textContent = 'Invalid name!';
                 alert('Invalid name!');
+                return;
             } else {
                 editProjectMsg.classList.remove('error');
                 editProjectMsg.textContent = '';
             }
 
             for (let i=0; i<Projects.length; i++) {
-                if (Projects[i].name.toLowerCase() === renameProjectIpt.value.toLowerCase() && renameProjectIpt.value.toLowerCase() !== name.toLowerCase()) {
+                if (Projects[i].name.toLowerCase() === newName.toLowerCase() && renameProjectIpt.value.toLowerCase() !== name.toLowerCase()) {
                     editProjectMsg.setAttribute('class', 'error');
                     editProjectMsg.textContent = "You cannot rename a project to an existing project's name";
                     console.log(Projects.length);
                     return;
                 }
             }
+            let index = Projects.findIndex(project => project.name === name);
+            Projects[index].name = newName.charAt(0).toUpperCase() + newName.slice(1);
+            updateProjectsList();
+            editProjectModal.remove();
+
+
         });
 
         editProjectCancelButton.addEventListener('click', () => {
