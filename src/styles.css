@@ -338,7 +338,7 @@ dialog.modal-delete-project {
       font-weight: 800;
 
       &:hover {
-        background-color: rgb(81, 206, 56);
+        background-color: rgba(255, 10, 10, 0.7);
         cursor: pointer;
         color: white;
       }
@@ -352,9 +352,8 @@ dialog.modal-delete-project {
     font-weight: 800;
 
     &:hover {
-      background-color: rgba(255, 10, 10, 0.7);
+      background-color: rgb(200, 200, 200);
       cursor: pointer;
-      color: white;
     }
 }
 

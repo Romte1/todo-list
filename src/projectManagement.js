@@ -196,7 +196,7 @@
         deleteProjectModal.setAttribute('class', 'modal-delete-project');
         deleteProjectP.textContent = 'This project will be deleted';
 
-        deleteProjectConfirmButton.textContent = 'Confirm';
+        deleteProjectConfirmButton.textContent = 'Delete';
         deleteProjectCancelButton.textContent = 'Cancel';
 
         deleteProjectConfirmButton.setAttribute('class', 'btn-confirm');
