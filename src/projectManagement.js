@@ -226,11 +226,11 @@
 
 
         body.appendChild(deleteProjectModal);
+
         deleteProjectModal.showModal();
 
-
-
-
+        //to avoid focusing a button right after opening the dialog
+        deleteProjectModal.focus();
 
         // removes modal when pressin escape key
         document.addEventListener('keyup',function(e){
