@@ -81,7 +81,9 @@
             projectP.textContent = Projects[i].name;
 
             projectP.addEventListener('click', () => {
-                alert(Projects[i].name);
+                let name = Projects[i].name;
+
+                projectContent(name);
             })
 
             projectEdit.setAttribute('name','pencil-outline');
@@ -252,11 +254,16 @@
         Projects.push(defaultProject);
         updateProjectsList();
 
-    }
+    };
 
     document.addEventListener('DOMContentLoaded', function() {
         defaultProject();
     });
+
+    function projectContent(name) {
+        const content = document.querySelector('.content');
+        content.textContent = name;
+    }
 
 
 
