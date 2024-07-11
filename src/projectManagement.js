@@ -83,6 +83,9 @@
             projectP.addEventListener('click', () => {
                 let name = Projects[i].name;
 
+                //this is to remove everything from content before loading the section, else it will duplicate injected data
+                removeContent();
+
                 projectContent(name);
             })
 
@@ -262,7 +265,17 @@
 
     function projectContent(name) {
         const content = document.querySelector('.content');
-        content.textContent = name;
+        const projectMain = document.createElement('div');
+        const projectName = document.createElement('h1');
+
+        projectName.textContent = name;
+
+        projectMain.appendChild(projectName);
+        content.appendChild(projectMain);
+    }
+
+    function removeContent() {
+        document.querySelector('.content').innerHTML = '';
     }
 
 

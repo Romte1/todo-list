@@ -48,7 +48,7 @@ header {
   border-radius: 8px;
   display:flex;
   flex-direction: column;
-  padding:8px 0;
+  padding:16px 0;
   justify-content: flex-start;
 
   h2{
@@ -153,6 +153,7 @@ header {
   background-color: rgb(241, 241, 241);
   border: var(--custom-border);
   border-radius: 8px;
+  padding: 16px 64px;
 }
 
 dialog.modal {
