@@ -154,6 +154,24 @@ header {
   border: var(--custom-border);
   border-radius: 8px;
   padding: 16px 64px;
+
+  >:first-child {
+    display:flex;
+    flex-direction: row;
+    gap:8px;
+
+    >h1 {
+      align-self: center;
+    }
+    
+    .add-task {
+      font-size: 48px;
+      color: rgb(81, 206, 56);
+    }
+
+  }
+
+
 }
 
 dialog.modal {

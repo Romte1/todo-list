@@ -267,10 +267,18 @@
         const content = document.querySelector('.content');
         const projectMain = document.createElement('div');
         const projectName = document.createElement('h1');
+        const taskAdd = document.createElement('ion-icon');
 
         projectName.textContent = name;
 
+        taskAdd.setAttribute('name', 'add-circle-outline');
+        taskAdd.setAttribute('class', 'add-task');
+
+
         projectMain.appendChild(projectName);
+        projectMain.appendChild(taskAdd);
+        
+
         content.appendChild(projectMain);
     }
 
