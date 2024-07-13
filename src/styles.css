@@ -159,14 +159,21 @@ header {
     display:flex;
     flex-direction: row;
     gap:8px;
+    justify-content: space-between;
 
     >h1 {
       align-self: center;
     }
     
     .add-task {
-      font-size: 48px;
-      color: rgb(81, 206, 56);
+      font-size: 56px;
+      color: rgb(68, 71, 67);
+
+      &:hover {
+        color: rgb(81, 206, 56);
+        transition: 0.2s;
+        cursor: pointer;
+      }
     }
 
   }
