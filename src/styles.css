@@ -32,7 +32,7 @@ body {
 
 header {
     grid-column: span 2;
-    background-color: rgb(209, 208, 208);
+    background-color: rgb(224, 224, 224);
     max-height: 150px;
     align-self: flex-start;
     padding:16px;
@@ -154,6 +154,9 @@ header {
   border: var(--custom-border);
   border-radius: 8px;
   padding: 16px 64px;
+  display: flex;
+  flex-direction: column;
+  gap:16px;
 
   >:first-child {
     display:flex;
@@ -176,6 +179,13 @@ header {
       }
     }
 
+  }
+
+  >:nth-child(2) {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(224, 224, 224);
+    border-radius: 8px;
   }
 
 

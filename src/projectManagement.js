@@ -268,6 +268,7 @@
         const projectMain = document.createElement('div');
         const projectName = document.createElement('h1');
         const taskAdd = document.createElement('ion-icon');
+        const projectTasks = document.createElement('div');
 
         projectName.textContent = name;
 
@@ -280,6 +281,7 @@
         
 
         content.appendChild(projectMain);
+        content.appendChild(projectTasks);
     }
 
     function removeContent() {
