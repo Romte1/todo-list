@@ -163,6 +163,7 @@
             Projects[index].name = newName.charAt(0).toUpperCase() + newName.slice(1);
             updateProjectsList();
             editProjectModal.remove();
+            document.querySelector('.content').innerHTML = '';
 
 
         });
@@ -219,6 +220,7 @@
             deleteProjectModal.remove();
             updateProjectsList();
             console.log(Projects);
+            document.querySelector('.content').innerHTML = '';
             
         });
 
