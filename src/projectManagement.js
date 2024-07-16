@@ -1,3 +1,5 @@
+import newTask from './tasksManagement';
+
     let Projects = [];
     
     function newProject() {
@@ -276,6 +278,10 @@
 
         taskAdd.setAttribute('name', 'add-circle-outline');
         taskAdd.setAttribute('class', 'add-task');
+
+        taskAdd.addEventListener('click', () => {
+            newTask();
+        })
 
 
         projectMain.appendChild(projectName);
