@@ -12,6 +12,10 @@ let tasks = [];
         newTaskP.textContent = 'New Task';
 
         taskNameLbl.textContent = 'Name:';
+        taskNameLbl.setAttribute('for', 'Name');
+
+        taskNameIpt.setAttribute('id', 'Name');
+        taskNameIpt.setAttribute('name', 'Name');
 
         // removes modal when pressin escape key
         document.addEventListener('keyup',function(e){
