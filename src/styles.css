@@ -408,7 +408,9 @@ dialog.modal-new-task {
   padding:32px;
   background: rgb(241, 241, 241);
   border-radius: 8px;
-  width: 300px;
+  width: 400px;
+  display:flex;
+  flex-direction: column;
 
   &::backdrop {
       backdrop-filter: blur(3px);
@@ -449,6 +451,7 @@ dialog.modal-new-task {
   div {
     display: flex;
     gap: 8px;
+    justify-content: space-between;
 
     >label { 
       grid-row: 2;
@@ -456,7 +459,7 @@ dialog.modal-new-task {
     }
   
     >input {
-      width: 100%;
+      width: 220px;
       height: 28px;
       grid-row: 2;
       outline: none;
