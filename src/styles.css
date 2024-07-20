@@ -467,6 +467,18 @@ dialog.modal-new-task {
       padding-left: 2px;
       align-self: center;
     }
+
+    >select {
+      width: 220px;
+      height: 28px;
+      grid-row: 2;
+      outline: none;
+      border-radius: 4px;
+      padding-left: 2px;
+      align-self: center;
+      background-color: white;
+    }
+
   }
 
 

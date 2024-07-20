@@ -11,7 +11,13 @@ let tasks = [];
         const taskDescriptionIpt = document.createElement('input');
         const taskDueDateDiv = document.createElement('div');
         const taskDueDateLbl = document.createElement('label');
-        const taskDueDateIpt = document.createElement('input');        
+        const taskDueDateIpt = document.createElement('input');
+        const taskPriorityDiv = document.createElement('div');
+        const taskPriorityLbl = document.createElement('label');
+        const taskPrioritySel = document.createElement('select');
+        const taskPriorityLowOp = document.createElement('option');
+        const taskPriorityMedOp = document.createElement('option');
+        const taskPriorityHighOp = document.createElement('option');        
 
         newTaskModal.setAttribute('class', 'modal-new-task');
 
@@ -26,6 +32,9 @@ let tasks = [];
         taskDueDateLbl.textContent ='Due date:';
         taskDueDateLbl.setAttribute('for', 'DueDate');
 
+        taskPriorityLbl.textContent = 'Priority:';
+        taskPriorityLbl.setAttribute('for', 'Priority');
+
         taskNameIpt.setAttribute('id', 'Name');
         taskNameIpt.setAttribute('name', 'Name');
 
@@ -36,7 +45,26 @@ let tasks = [];
         taskDescriptionIpt.setAttribute('id', 'Description');
         taskDescriptionIpt.setAttribute('name', 'Description');
 
+        taskPrioritySel.setAttribute('id', 'Priority');
+        taskPrioritySel.setAttribute('name', 'Priority');
 
+        //here we add the options to the task priority selection
+
+        taskPriorityLowOp.textContent = 'Low';
+        taskPriorityLowOp.value = 'low';
+        taskPrioritySel.appendChild(taskPriorityLowOp);
+
+        taskPriorityMedOp.textContent = 'Medium';
+        taskPriorityMedOp.value = 'medium';
+        taskPrioritySel.appendChild(taskPriorityMedOp);
+
+        taskPriorityHighOp.textContent = 'High';
+        taskPriorityHighOp.value = 'high';
+        taskPrioritySel.appendChild(taskPriorityHighOp);
+
+        //this sets the medium option as default
+
+        taskPrioritySel.selectedIndex = 1;
 
         // removes modal when pressin escape key
         document.addEventListener('keyup',function(e){
@@ -55,10 +83,14 @@ let tasks = [];
         taskDueDateDiv.appendChild(taskDueDateLbl);
         taskDueDateDiv.appendChild(taskDueDateIpt);
 
+        taskPriorityDiv.appendChild(taskPriorityLbl);
+        taskPriorityDiv.appendChild(taskPrioritySel);
+
         newTaskModal.appendChild(newTaskP);
         newTaskModal.appendChild(taskNameDiv);
         newTaskModal.appendChild(taskDescriptionDiv);
         newTaskModal.appendChild(taskDueDateDiv);
+        newTaskModal.appendChild(taskPriorityDiv);
 
         body.appendChild(newTaskModal);
 
