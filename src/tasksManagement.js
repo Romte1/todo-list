@@ -17,7 +17,11 @@ let tasks = [];
         const taskPrioritySel = document.createElement('select');
         const taskPriorityLowOp = document.createElement('option');
         const taskPriorityMedOp = document.createElement('option');
-        const taskPriorityHighOp = document.createElement('option');        
+        const taskPriorityHighOp = document.createElement('option');
+        const taskButtonsDiv = document.createElement('div');
+        const taskAddBtn = document.createElement('button');
+        const taskClearBtn = document.createElement('button');
+        const taskCancelBtn = document.createElement('button');         
 
         newTaskModal.setAttribute('class', 'modal-new-task');
 
@@ -48,6 +52,10 @@ let tasks = [];
         taskPrioritySel.setAttribute('id', 'Priority');
         taskPrioritySel.setAttribute('name', 'Priority');
 
+        taskAddBtn.textContent = 'Add';
+        taskClearBtn.textContent = 'Clear';
+        taskCancelBtn.textContent = 'Cancel';
+
         //here we add the options to the task priority selection
 
         taskPriorityLowOp.textContent = 'Low';
@@ -62,7 +70,7 @@ let tasks = [];
         taskPriorityHighOp.value = 'high';
         taskPrioritySel.appendChild(taskPriorityHighOp);
 
-        //this sets the medium option as default
+        //this sets the medium option from select as default
 
         taskPrioritySel.selectedIndex = 1;
 
@@ -86,11 +94,16 @@ let tasks = [];
         taskPriorityDiv.appendChild(taskPriorityLbl);
         taskPriorityDiv.appendChild(taskPrioritySel);
 
+        taskButtonsDiv.appendChild(taskAddBtn);
+        taskButtonsDiv.appendChild(taskClearBtn);
+        taskButtonsDiv.appendChild(taskCancelBtn);
+
         newTaskModal.appendChild(newTaskP);
         newTaskModal.appendChild(taskNameDiv);
         newTaskModal.appendChild(taskDescriptionDiv);
         newTaskModal.appendChild(taskDueDateDiv);
         newTaskModal.appendChild(taskPriorityDiv);
+        newTaskModal.appendChild(taskButtonsDiv);
 
         body.appendChild(newTaskModal);
 
