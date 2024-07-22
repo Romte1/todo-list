@@ -479,6 +479,42 @@ dialog.modal-new-task {
       background-color: white;
     }
 
+    >button {
+      width: 33%;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 800;
+    }
+
+    >.btn-add {
+
+      &:hover {
+        background-color: rgb(81, 206, 56);
+        cursor: pointer;
+        color: white;
+      }
+
+    }
+
+    >.btn-clear {
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+      }
+
+    }
+
+    >.btn-cancel {
+
+      &:hover {
+        background-color: rgba(255, 10, 10, 0.7);
+        cursor: pointer;
+        color: white;
+      }
+
+    }
+
   }
 
 

@@ -53,8 +53,13 @@ let tasks = [];
         taskPrioritySel.setAttribute('name', 'Priority');
 
         taskAddBtn.textContent = 'Add';
+        taskAddBtn.setAttribute('class', 'btn-add');
+
         taskClearBtn.textContent = 'Clear';
+        taskClearBtn.setAttribute('class', 'btn-clear');
+
         taskCancelBtn.textContent = 'Cancel';
+        taskCancelBtn.setAttribute('class', 'btn-cancel');
 
         //here we add the options to the task priority selection
 
