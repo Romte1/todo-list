@@ -79,6 +79,15 @@ let tasks = [];
 
         taskPrioritySel.selectedIndex = 1;
 
+        //here are the event listeners for the buttons
+
+        taskClearBtn.addEventListener('click', () => {
+            taskNameIpt.value = '';
+            taskDescriptionIpt.value = '';
+            taskDueDateIpt.value = '';
+            taskPrioritySel.selectedIndex = 1;
+        });
+
         // removes modal when pressin escape key
         document.addEventListener('keyup',function(e){
             if (e.key === "Escape") { 
