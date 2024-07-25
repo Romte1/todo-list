@@ -88,6 +88,10 @@ let tasks = [];
             taskPrioritySel.selectedIndex = 1;
         });
 
+        taskCancelBtn.addEventListener('click', () => {
+            newTaskModal.remove();
+        });
+
         // removes modal when pressin escape key
         document.addEventListener('keyup',function(e){
             if (e.key === "Escape") { 
