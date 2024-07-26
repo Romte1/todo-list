@@ -280,7 +280,7 @@ import newTask from './tasksManagement';
         taskAdd.setAttribute('class', 'add-task');
 
         taskAdd.addEventListener('click', () => {
-            newTask();
+            newTask(name);
         })
 
 

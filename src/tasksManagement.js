@@ -1,5 +1,5 @@
 let tasks = [];
-    function newTask() {
+    function newTask(currentTask) {
         const body = document.querySelector('body');
         const newTaskModal = document.createElement('dialog');
         const newTaskP = document.createElement('p');
@@ -81,6 +81,10 @@ let tasks = [];
 
         //here are the event listeners for the buttons
 
+        taskAddBtn.addEventListener('click', () => {
+            alert(currentTask);
+        });
+
         taskClearBtn.addEventListener('click', () => {
             taskNameIpt.value = '';
             taskDescriptionIpt.value = '';
@@ -91,6 +95,7 @@ let tasks = [];
         taskCancelBtn.addEventListener('click', () => {
             newTaskModal.remove();
         });
+
 
         // removes modal when pressin escape key
         document.addEventListener('keyup',function(e){
