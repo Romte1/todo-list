@@ -18,6 +18,8 @@ let tasks = [];
         const taskPriorityLowOp = document.createElement('option');
         const taskPriorityMedOp = document.createElement('option');
         const taskPriorityHighOp = document.createElement('option');
+        const taskErrorDiv = document.createElement('div');
+        const taskErrorLbl = document.createElement('label');
         const taskButtonsDiv = document.createElement('div');
         const taskAddBtn = document.createElement('button');
         const taskClearBtn = document.createElement('button');
@@ -52,6 +54,8 @@ let tasks = [];
         taskPrioritySel.setAttribute('id', 'Priority');
         taskPrioritySel.setAttribute('name', 'Priority');
 
+        taskErrorDiv.setAttribute('class', 'error-container');
+
         taskAddBtn.textContent = 'Add';
         taskAddBtn.setAttribute('class', 'btn-add');
 
@@ -82,7 +86,22 @@ let tasks = [];
         //here are the event listeners for the buttons
 
         taskAddBtn.addEventListener('click', () => {
-            alert(currentTask);
+
+            let nameValue = taskNameIpt.value;
+            let descrValue = taskDescriptionIpt.value;
+            let dateValue = taskDueDateIpt.value;
+            let prioValue = taskPrioritySel.value;
+
+            if (nameValue !== '' && descrValue !== '' && dateValue !== '' && prioValue !== '') {
+
+                alert(currentTask);
+
+            }
+
+            else {
+                taskErrorLbl.setAttribute('class', 'error-msg');
+                taskErrorLbl.textContent = 'Fields are required!';
+            }
         });
 
         taskClearBtn.addEventListener('click', () => {
@@ -117,6 +136,8 @@ let tasks = [];
         taskPriorityDiv.appendChild(taskPriorityLbl);
         taskPriorityDiv.appendChild(taskPrioritySel);
 
+        taskErrorDiv.appendChild(taskErrorLbl);
+
         taskButtonsDiv.appendChild(taskAddBtn);
         taskButtonsDiv.appendChild(taskClearBtn);
         taskButtonsDiv.appendChild(taskCancelBtn);
@@ -126,6 +147,7 @@ let tasks = [];
         newTaskModal.appendChild(taskDescriptionDiv);
         newTaskModal.appendChild(taskDueDateDiv);
         newTaskModal.appendChild(taskPriorityDiv);
+        newTaskModal.appendChild(taskErrorDiv);
         newTaskModal.appendChild(taskButtonsDiv);
 
         body.appendChild(newTaskModal);
