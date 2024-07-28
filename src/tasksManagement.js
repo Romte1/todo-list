@@ -79,9 +79,11 @@ let tasks = [];
         taskPriorityHighOp.value = 'high';
         taskPrioritySel.appendChild(taskPriorityHighOp);
 
+
         //this sets the medium option from select as default
 
         taskPrioritySel.selectedIndex = 1;
+
 
         //here are the event listeners for the buttons
 
@@ -95,6 +97,7 @@ let tasks = [];
             if (nameValue !== '' && descrValue !== '' && dateValue !== '' && prioValue !== '') {
 
                 alert(currentTask);
+                newTaskModal.remove();
 
             }
 
@@ -117,6 +120,7 @@ let tasks = [];
 
 
         // removes modal when pressin escape key
+
         document.addEventListener('keyup',function(e){
             if (e.key === "Escape") { 
                 
