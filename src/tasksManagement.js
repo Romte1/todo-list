@@ -1,4 +1,5 @@
 let tasks = [];
+let taskID = 0;
     function newTask(currentTask) {
         const body = document.querySelector('body');
         const newTaskModal = document.createElement('dialog');
@@ -88,15 +89,15 @@ let tasks = [];
         //here are the event listeners for the buttons
 
         taskAddBtn.addEventListener('click', () => {
-
+            
             let nameValue = taskNameIpt.value;
             let descrValue = taskDescriptionIpt.value;
             let dateValue = taskDueDateIpt.value;
             let prioValue = taskPrioritySel.value;
 
             if (nameValue !== '' && descrValue !== '' && dateValue !== '' && prioValue !== '') {
-
-                alert(currentTask);
+                taskID = taskID + 1;
+                alert(currentTask + taskID);
                 newTaskModal.remove();
 
             }
