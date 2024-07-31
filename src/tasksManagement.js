@@ -1,6 +1,6 @@
 let tasks = [];
 let taskID = 0;
-    function newTask(currentTask) {
+    function newTask(currentProject) {
         const body = document.querySelector('body');
         const newTaskModal = document.createElement('dialog');
         const newTaskP = document.createElement('p');
@@ -97,9 +97,9 @@ let taskID = 0;
 
             if (nameValue !== '' && descrValue !== '' && dateValue !== '' && prioValue !== '') {
                 taskID = taskID + 1;
-                alert(currentTask + taskID);
+                alert(currentProject + taskID);
 
-                var task = new Task(taskID);
+                var task = new Task(taskID, currentProject, nameValue, descrValue, dateValue, prioValue);
                 tasks.push(task);
                 console.log(tasks);
 
@@ -166,8 +166,13 @@ let taskID = 0;
     }
 
     class Task {
-        constructor (taskID) {
+        constructor (taskID, currentProject, nameValue, descrValue, dateValue, prioValue) {
             this.taskID = taskID;
+            this.project = currentProject;
+            this.name = nameValue;
+            this.description = descrValue;
+            this.date = dateValue;
+            this.priority = prioValue;
         }
     }
 
