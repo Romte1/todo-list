@@ -101,6 +101,7 @@ let taskID = 0;
 
                 var task = new Task(taskID, currentProject, nameValue, descrValue, dateValue, prioValue);
                 tasks.push(task);
+                loadTasksList(currentProject);
                 console.log(tasks);
 
                 newTaskModal.remove();
@@ -163,6 +164,15 @@ let taskID = 0;
         body.appendChild(newTaskModal);
 
         newTaskModal.showModal();
+    }
+
+    function loadTasksList(projectName) {
+        const content = document.querySelector('.content');
+        const currentProjectTasks = tasks.filter(obj => obj.project === projectName);
+        console.log(currentProjectTasks);
+
+        
+
     }
 
     class Task {
