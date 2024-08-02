@@ -167,9 +167,26 @@ let taskID = 0;
     }
 
     function loadTasksList(projectName) {
-        const content = document.querySelector('.content');
+
+        const tasksList = document.querySelector('.tasks-list');
+
         const currentProjectTasks = tasks.filter(obj => obj.project === projectName);
         console.log(currentProjectTasks);
+
+        tasksList.innerHTML = '';
+
+        for (let i=0; i<currentProjectTasks.length; i++) {
+
+            let taskDiv = document.createElement('div');
+            let taskNameP = document.createElement('p');
+
+            taskNameP.textContent = currentProjectTasks[i].name;
+
+            taskDiv.appendChild(taskNameP);
+            tasksList.appendChild(taskDiv);
+        };
+
+
 
         
 
