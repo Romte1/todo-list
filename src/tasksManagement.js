@@ -169,16 +169,21 @@ let taskID = 0;
     function loadTasksList(projectName) {
 
         const tasksList = document.querySelector('.tasks-list');
+        let taskDivs = document.querySelectorAll('.task');
 
         const currentProjectTasks = tasks.filter(obj => obj.project === projectName);
         console.log(currentProjectTasks);
 
-        tasksList.innerHTML = '';
+        taskDivs.forEach(div => {
+            div.remove();
+        });
 
         for (let i=0; i<currentProjectTasks.length; i++) {
 
             let taskDiv = document.createElement('div');
             let taskNameP = document.createElement('p');
+
+            taskDiv.setAttribute('class', 'task');
 
             taskNameP.textContent = currentProjectTasks[i].name;
 
