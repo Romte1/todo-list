@@ -208,4 +208,4 @@ let taskID = 0;
         }
     }
 
-export default newTask;
+export default {newTask, loadTasksList};

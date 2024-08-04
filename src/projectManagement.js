@@ -1,4 +1,4 @@
-import newTask from './tasksManagement';
+import tasks from './tasksManagement';
 
     let Projects = [];
     
@@ -282,7 +282,7 @@ import newTask from './tasksManagement';
         projectTasks.setAttribute('class', 'tasks-list');
 
         taskAdd.addEventListener('click', () => {
-            newTask(name);
+            tasks.newTask(name);
         })
 
 
@@ -292,6 +292,8 @@ import newTask from './tasksManagement';
 
         content.appendChild(projectMain);
         content.appendChild(projectTasks);
+
+        tasks.loadTasksList(name);
     }
 
     function removeContent() {
