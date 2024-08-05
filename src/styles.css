@@ -190,10 +190,14 @@ header {
 
     >div {
       padding: 0 16px;
+      height: 32px;
+      display: flex;
+      align-items: center;
 
       &:hover{
         background-color: rgba(0, 0, 0, 0.1);
         transition:0.2s;
+        cursor: pointer;
   
       }
 
