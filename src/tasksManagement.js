@@ -182,12 +182,15 @@ let taskID = 0;
 
             let taskDiv = document.createElement('div');
             let taskNameP = document.createElement('p');
+            let taskDescriptionP = document.createElement('p');
 
             taskDiv.setAttribute('class', 'task');
 
             taskNameP.textContent = currentProjectTasks[i].name;
+            taskDescriptionP.textContent=currentProjectTasks[i].description;
 
             taskDiv.appendChild(taskNameP);
+            taskDiv.appendChild(taskDescriptionP);
             tasksList.appendChild(taskDiv);
         };
 
