@@ -1,3 +1,4 @@
+import { format, parseISO, formatDistance, formatRelative, subDays } from 'date-fns'
 let tasks = [];
 let taskID = 0;
     function newTask(currentProject) {
@@ -183,14 +184,21 @@ let taskID = 0;
             let taskDiv = document.createElement('div');
             let taskNameP = document.createElement('p');
             let taskDescriptionP = document.createElement('p');
+            let taskDateP = document.createElement('p');
+            let taskPriorityP = document.createElement('p');
+
 
             taskDiv.setAttribute('class', 'task');
 
             taskNameP.textContent = currentProjectTasks[i].name;
-            taskDescriptionP.textContent=currentProjectTasks[i].description;
+            taskDescriptionP.textContent = currentProjectTasks[i].description;
+            taskDateP.textContent = format(parseISO(currentProjectTasks[i].date), 'MM-dd-yy');
+            taskPriorityP.textContent = currentProjectTasks[i].priority;
 
             taskDiv.appendChild(taskNameP);
             taskDiv.appendChild(taskDescriptionP);
+            taskDiv.appendChild(taskDateP);
+            taskDiv.appendChild(taskPriorityP);
             tasksList.appendChild(taskDiv);
         };
 
