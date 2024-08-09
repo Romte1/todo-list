@@ -193,12 +193,17 @@ header {
       height: 32px;
       display: flex;
       align-items: center;
+      justify-content: space-between;
 
       &:hover{
         background-color: rgba(0, 0, 0, 0.1);
         transition:0.2s;
         cursor: pointer;
   
+      }
+
+      >p {
+        
       }
 
     }
