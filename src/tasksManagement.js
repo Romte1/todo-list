@@ -186,6 +186,7 @@ let taskID = 0;
             let taskDescriptionP = document.createElement('p');
             let taskDateP = document.createElement('p');
             let taskPriorityP = document.createElement('p');
+            let taskOptionsDiv = document.createElement('div');
 
 
             taskDiv.setAttribute('class', 'task');
@@ -199,6 +200,7 @@ let taskID = 0;
             taskDiv.appendChild(taskDescriptionP);
             taskDiv.appendChild(taskDateP);
             taskDiv.appendChild(taskPriorityP);
+            taskDiv.appendChild(taskOptionsDiv);
             tasksList.appendChild(taskDiv);
         };
 
