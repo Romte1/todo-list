@@ -187,6 +187,7 @@ let taskID = 0;
             let taskDateP = document.createElement('p');
             let taskPriorityP = document.createElement('p');
             let taskOptionsDiv = document.createElement('div');
+            let taskDoneCheckbox = document.createElement('input');
 
 
             taskDiv.setAttribute('class', 'task');
@@ -195,6 +196,10 @@ let taskID = 0;
             taskDescriptionP.textContent = currentProjectTasks[i].description;
             taskDateP.textContent = format(parseISO(currentProjectTasks[i].date), 'MM-dd-yy');
             taskPriorityP.textContent = currentProjectTasks[i].priority;
+
+            taskDoneCheckbox.setAttribute('type', 'checkbox');
+
+            taskOptionsDiv.appendChild(taskDoneCheckbox);
 
             taskDiv.appendChild(taskNameP);
             taskDiv.appendChild(taskDescriptionP);
