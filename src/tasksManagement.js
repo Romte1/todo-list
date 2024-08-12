@@ -196,6 +196,27 @@ let taskID = 0;
             taskDescriptionP.textContent = currentProjectTasks[i].description;
             taskDateP.textContent = format(parseISO(currentProjectTasks[i].date), 'MM-dd-yy');
             taskPriorityP.textContent = currentProjectTasks[i].priority;
+            
+            taskDoneCheckbox.addEventListener('click', () => { 
+
+                //check task status
+                if (taskDoneCheckbox.checked === false) {
+                    currentProjectTasks[i].status = false;
+                } else {
+                    currentProjectTasks[i].status = true;
+                };
+
+            });
+
+            //update task status for user
+            if (currentProjectTasks[i].status === false) {
+                taskDoneCheckbox.checked = false;
+            } else {
+                taskDoneCheckbox.checked = true;
+            }           
+
+
+            taskOptionsDiv.setAttribute('class', 'task-options');
 
             taskDoneCheckbox.setAttribute('type', 'checkbox');
 
@@ -223,6 +244,7 @@ let taskID = 0;
             this.description = descrValue;
             this.date = dateValue;
             this.priority = prioValue;
+            this.status = false;
         }
     }
 
