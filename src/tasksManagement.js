@@ -188,6 +188,8 @@ let taskID = 0;
             let taskPriorityP = document.createElement('p');
             let taskOptionsDiv = document.createElement('div');
             let taskDoneCheckbox = document.createElement('input');
+            let taskEdit = document.createElement('ion-icon');
+            let taskDelete = document.createElement('ion-icon');
 
 
             taskDiv.setAttribute('class', 'task');
@@ -213,7 +215,14 @@ let taskID = 0;
                 taskDoneCheckbox.checked = false;
             } else {
                 taskDoneCheckbox.checked = true;
-            }           
+            }
+
+            
+            taskEdit.setAttribute('name','pencil-outline');
+            taskEdit.setAttribute('class','edit-task');
+
+            taskDelete.setAttribute('name', 'trash-outline');
+            taskDelete.setAttribute('class', 'del-task');
 
 
             taskOptionsDiv.setAttribute('class', 'task-options');
@@ -221,6 +230,8 @@ let taskID = 0;
             taskDoneCheckbox.setAttribute('type', 'checkbox');
 
             taskOptionsDiv.appendChild(taskDoneCheckbox);
+            taskOptionsDiv.appendChild(taskEdit);
+            taskOptionsDiv.appendChild(taskDelete);
 
             taskDiv.appendChild(taskNameP);
             taskDiv.appendChild(taskDescriptionP);
