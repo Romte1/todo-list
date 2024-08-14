@@ -206,6 +206,49 @@ header {
         
       }
 
+      .task-options {
+        display: flex;
+        align-items: center;
+        gap:4px;
+
+        >input {
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          border: 2px solid #333;
+          border-radius: 4px;
+
+          &:hover {
+            transform: scale(1.5);
+            cursor: pointer;
+          }
+        }
+
+        .del-task {
+          padding:4px;
+  
+          &:hover {
+            background-color: rgb(230, 55, 55);
+            border-radius: 8px;
+            color:white;
+            transition: 0.2s;
+          }
+        }
+  
+        .edit-task {
+          padding:4px;
+  
+          &:hover {
+            background-color: rgb(81, 206, 56);
+            border-radius: 8px;
+            color:white;
+            transition: 0.2s;
+          }
+        }
+
+      }
+
+
     }
   }
 
