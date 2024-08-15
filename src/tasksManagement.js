@@ -217,6 +217,7 @@ let taskID = 0;
                 taskDoneCheckbox.checked = true;
             }
 
+            taskOptionsDiv.setAttribute('class', 'task-options');
             
             taskEdit.setAttribute('name','pencil-outline');
             taskEdit.setAttribute('class','edit-task');
@@ -224,10 +225,17 @@ let taskID = 0;
             taskDelete.setAttribute('name', 'trash-outline');
             taskDelete.setAttribute('class', 'del-task');
 
-
-            taskOptionsDiv.setAttribute('class', 'task-options');
-
             taskDoneCheckbox.setAttribute('type', 'checkbox');
+
+            //task option event listeners
+
+            taskDelete.addEventListener('click', () => {
+                
+                let id = tasks[i].taskID;
+                console.log(id);
+                deleteTask(id);
+
+            });
 
             taskOptionsDiv.appendChild(taskDoneCheckbox);
             taskOptionsDiv.appendChild(taskEdit);
@@ -258,5 +266,10 @@ let taskID = 0;
             this.status = false;
         }
     }
+
+    function deleteTask(id) {
+        tasks = tasks.filter(item => item.taskID !== id);
+    }
+
 
 export default {newTask, loadTasksList};
