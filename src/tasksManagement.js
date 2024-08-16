@@ -231,7 +231,7 @@ let taskID = 0;
 
             taskDelete.addEventListener('click', () => {
                 
-                let id = tasks[i].taskID;
+                let id = currentProjectTasks[i].taskID;
                 console.log(id);
                 deleteTask(id);
 
@@ -269,6 +269,7 @@ let taskID = 0;
 
     function deleteTask(id) {
         tasks = tasks.filter(item => item.taskID !== id);
+        console.log('id is:',id);
     }
 
 
