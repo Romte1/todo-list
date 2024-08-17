@@ -234,6 +234,8 @@ let taskID = 0;
                 let id = currentProjectTasks[i].taskID;
                 console.log(id);
                 deleteTask(id);
+                loadTasksList(projectName);
+                
 
             });
 
