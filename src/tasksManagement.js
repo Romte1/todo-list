@@ -179,6 +179,8 @@ let taskID = 0;
             div.remove();
         });
 
+        loadContentTitle(tasksList);
+
         for (let i=0; i<currentProjectTasks.length; i++) {
 
             let taskDiv = document.createElement('div');
@@ -267,6 +269,31 @@ let taskID = 0;
             this.priority = prioValue;
             this.status = false;
         }
+    }
+
+    function loadContentTitle(tasksList) {
+
+        //remove title first to avoid duplicates, 
+        //first we declare the element and then we check if it exists already
+        let title = document.querySelector('.content-title');
+
+        if (title){
+            
+            title.remove();
+
+        };
+
+        let taskDivTitle = document.createElement('div');
+        let taskMainName = document.createElement('p');
+
+        taskDivTitle.setAttribute('class', 'content-title');
+        
+        taskMainName.textContent = ('Name');
+
+
+        taskDivTitle.appendChild(taskMainName);
+        tasksList.appendChild(taskDivTitle);
+
     }
 
     function deleteTask(id) {
