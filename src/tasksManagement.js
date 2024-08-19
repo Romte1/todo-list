@@ -272,7 +272,6 @@ let taskID = 0;
     }
 
     function loadContentTitle(tasksList) {
-
         //remove title first to avoid duplicates, 
         //first we declare the element and then we check if it exists already
         let title = document.querySelector('.content-title');
@@ -285,13 +284,16 @@ let taskID = 0;
 
         let taskDivTitle = document.createElement('div');
         let taskMainName = document.createElement('p');
+        let taskMainDescription = document.createElement('p');
 
         taskDivTitle.setAttribute('class', 'content-title');
         
         taskMainName.textContent = ('Name');
+        taskMainDescription.textContent = ('Description');
 
 
         taskDivTitle.appendChild(taskMainName);
+        taskDivTitle.appendChild(taskMainDescription);
         tasksList.appendChild(taskDivTitle);
 
     }
