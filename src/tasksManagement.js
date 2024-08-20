@@ -285,15 +285,18 @@ let taskID = 0;
         let taskDivTitle = document.createElement('div');
         let taskMainName = document.createElement('p');
         let taskMainDescription = document.createElement('p');
+        let taskMainDueDate = document.createElement('p');
 
         taskDivTitle.setAttribute('class', 'content-title');
         
         taskMainName.textContent = ('Name');
         taskMainDescription.textContent = ('Description');
+        taskMainDueDate.textContent = ('Due Date');
 
 
         taskDivTitle.appendChild(taskMainName);
         taskDivTitle.appendChild(taskMainDescription);
+        taskDivTitle.appendChild(taskMainDueDate);
         tasksList.appendChild(taskDivTitle);
 
     }
