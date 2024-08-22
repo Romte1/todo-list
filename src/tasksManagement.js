@@ -287,6 +287,7 @@ let taskID = 0;
         let taskMainDescription = document.createElement('p');
         let taskMainDueDate = document.createElement('p');
         let taskMainPriority = document.createElement('p');
+        let taskMainActions = document.createElement('p');
 
         taskDivTitle.setAttribute('class', 'content-title');
         
@@ -294,12 +295,14 @@ let taskID = 0;
         taskMainDescription.textContent = ('Description');
         taskMainDueDate.textContent = ('Due Date');
         taskMainPriority.textContent = ('Priority');
+        taskMainActions.textContent = ('Actions');
 
 
         taskDivTitle.appendChild(taskMainName);
         taskDivTitle.appendChild(taskMainDescription);
         taskDivTitle.appendChild(taskMainDueDate);
         taskDivTitle.appendChild(taskMainPriority);
+        taskDivTitle.appendChild(taskMainActions);
         tasksList.appendChild(taskDivTitle);
 
     }
