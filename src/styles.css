@@ -189,7 +189,21 @@ header {
     padding: 16px 0;
 
     >.content-title {
-      display:flex;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #000; /* Border color */
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3); /* Shadow properties */
+
+      > * {
+        flex: 1 1 20%;
+      }
+
+      >p {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        font-weight: 700;
+      }
 
     }
 
