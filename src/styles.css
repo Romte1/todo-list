@@ -276,10 +276,22 @@ header {
 
     }
 
+    .low {
+      background: linear-gradient(to right, rgb(0, 255, 0) 5px, transparent 5px);
+      border-radius: 5px;
+    }
+
     .med {
       background: linear-gradient(to right, rgb(255, 255, 0) 5px, transparent 5px);
       border-radius: 5px;
     }
+
+    .high {
+      background: linear-gradient(to right, rgb(255, 0, 0) 5px, transparent 5px);
+      border-radius: 5px;
+    }
+
+
   }
 
 

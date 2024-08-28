@@ -198,9 +198,19 @@ let taskID = 0;
 
             //set left border color depending on task priority using class tag
 
+            if (currentProjectTasks[i].priority === 'low') {
+                taskDiv.classList.add('low');
+            }
+
             if (currentProjectTasks[i].priority === 'medium') {
                 taskDiv.classList.add('med');
             }
+
+            if (currentProjectTasks[i].priority === 'high') {
+                taskDiv.classList.add('high');
+            }
+
+
             taskNameP.textContent = currentProjectTasks[i].name;
             taskDescriptionP.textContent = currentProjectTasks[i].description;
             taskDateP.textContent = format(parseISO(currentProjectTasks[i].date), 'MM-dd-yy');
