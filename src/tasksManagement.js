@@ -327,5 +327,9 @@ let taskID = 0;
         console.log('id is:',id);
     }
 
+    function loadCompletedTasks() {
+        alert('completed tasks here!');
+    }
 
-export default {newTask, loadTasksList};
+
+export default {newTask, loadTasksList, loadCompletedTasks};

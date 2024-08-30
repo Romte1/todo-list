@@ -1,4 +1,6 @@
 import newProject from './projectManagement';
+import tasks from './tasksManagement';
+
 function home () {
     const content = document.querySelector('.content');
     const navigator = document.querySelector('.nav');
@@ -49,10 +51,14 @@ function home () {
     navigator.appendChild(navAddNewProjectDiv);
     navigator.appendChild(navProjects);
 
+    navCompletedTasksP.addEventListener('click', () => {
+        tasks.loadCompletedTasks();
+    });
+
 
     navAddNewProjectP.addEventListener('click', () => {
         newProject();
-    })
+    });
 
 
 }
