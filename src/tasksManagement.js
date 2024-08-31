@@ -329,6 +329,23 @@ let taskID = 0;
 
     function loadCompletedTasks() {
         alert('completed tasks here!');
+
+        const content = document.querySelector('.content');
+        const projectMain = document.createElement('div');
+        const sectionTitle = document.createElement('h1');
+        const projectTasks = document.createElement('div');
+
+        sectionTitle.textContent = 'Completed Tasks';
+
+        projectTasks.setAttribute('class', 'tasks-list');
+
+
+
+        projectMain.appendChild(sectionTitle);
+        
+
+        content.appendChild(projectMain);
+        content.appendChild(projectTasks);
     }
 
 
