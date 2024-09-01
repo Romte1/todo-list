@@ -52,14 +52,23 @@ function home () {
     navigator.appendChild(navProjects);
 
     navCompletedTasksP.addEventListener('click', () => {
+
+        //this is to remove everything from content before loading the section, else it will duplicate injected data
+        removeContent();
+
+        
         tasks.loadCompletedTasks();
+
     });
 
 
     navAddNewProjectP.addEventListener('click', () => {
         newProject();
     });
-
+    
+    function removeContent() {
+        document.querySelector('.content').innerHTML = '';
+    }
 
 }
 
