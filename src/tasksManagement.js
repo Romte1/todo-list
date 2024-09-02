@@ -346,7 +346,11 @@ let taskID = 0;
 
         content.appendChild(projectMain);
         content.appendChild(projectTasks);
+
+        loadContentTitle(projectTasks);
     }
+
+    
 
 
 export default {newTask, loadTasksList, loadCompletedTasks};
