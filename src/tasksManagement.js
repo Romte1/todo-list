@@ -330,6 +330,8 @@ let taskID = 0;
     function loadCompletedTasks() {
         alert('completed tasks here!');
 
+        const completedTasks = tasks.filter(obj => obj.status === true);
+
         const content = document.querySelector('.content');
         const projectMain = document.createElement('div');
         const sectionTitle = document.createElement('h1');
@@ -348,6 +350,96 @@ let taskID = 0;
         content.appendChild(projectTasks);
 
         loadContentTitle(projectTasks);
+
+        for (let i=0; i<completedTasks.length; i++) {
+
+            let taskDiv = document.createElement('div');
+            let taskNameP = document.createElement('p');
+            let taskDescriptionP = document.createElement('p');
+            let taskDateP = document.createElement('p');
+            let taskPriorityP = document.createElement('p');
+            let taskOptionsDiv = document.createElement('div');
+            let taskDoneCheckbox = document.createElement('input');
+            let taskEdit = document.createElement('ion-icon');
+            let taskDelete = document.createElement('ion-icon');
+
+
+            taskDiv.setAttribute('class', 'task');
+
+            //set left border color depending on task priority using class tag
+
+            if (completedTasks[i].priority === 'low') {
+                taskDiv.classList.add('low');
+            }
+
+            if (completedTasks[i].priority === 'medium') {
+                taskDiv.classList.add('med');
+            }
+
+            if (completedTasks[i].priority === 'high') {
+                taskDiv.classList.add('high');
+            }
+
+
+            taskNameP.textContent = completedTasks[i].name;
+            taskDescriptionP.textContent = completedTasks[i].description;
+            taskDateP.textContent = format(parseISO(completedTasks[i].date), 'MM-dd-yy');
+            taskPriorityP.textContent = completedTasks[i].priority;
+            
+            taskDoneCheckbox.addEventListener('click', () => { 
+
+                //check task status
+                if (taskDoneCheckbox.checked === false) {
+                    completedTasks[i].status = false;
+                } else {
+                    completedTasks[i].status = true;
+                };
+
+            });
+
+            //update task status for user
+            if (completedTasks[i].status === false) {
+                taskDoneCheckbox.checked = false;
+            } else {
+                taskDoneCheckbox.checked = true;
+            }
+
+            taskOptionsDiv.setAttribute('class', 'task-options');
+            
+            taskEdit.setAttribute('name','pencil-outline');
+            taskEdit.setAttribute('class','edit-task');
+
+            taskDelete.setAttribute('name', 'trash-outline');
+            taskDelete.setAttribute('class', 'del-task');
+
+            taskDoneCheckbox.setAttribute('type', 'checkbox');
+
+            //task option event listeners
+
+            taskDelete.addEventListener('click', () => {
+                
+                let id = completedTasks[i].taskID;
+                console.log(id);
+                deleteTask(id);
+                loadTasksList(projectName);
+                
+
+            });
+
+            taskOptionsDiv.appendChild(taskDoneCheckbox);
+            taskOptionsDiv.appendChild(taskEdit);
+            taskOptionsDiv.appendChild(taskDelete);
+
+            taskDiv.appendChild(taskNameP);
+            taskDiv.appendChild(taskDescriptionP);
+            taskDiv.appendChild(taskDateP);
+            taskDiv.appendChild(taskPriorityP);
+            taskDiv.appendChild(taskOptionsDiv);
+            projectTasks.appendChild(taskDiv);
+        };
+
+
+
     }
 
     
