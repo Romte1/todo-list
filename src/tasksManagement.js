@@ -328,7 +328,6 @@ let taskID = 0;
     }
 
     function loadCompletedTasks() {
-        alert('completed tasks here!');
 
         const completedTasks = tasks.filter(obj => obj.status === true);
 
@@ -436,6 +435,7 @@ let taskID = 0;
             taskDiv.appendChild(taskPriorityP);
             taskDiv.appendChild(taskOptionsDiv);
             projectTasks.appendChild(taskDiv);
+
         };
 
 
