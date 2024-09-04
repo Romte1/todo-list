@@ -322,6 +322,45 @@ let taskID = 0;
 
     }
 
+    function loadContentTitleForTasksSections(tasksList) {
+        //remove title first to avoid duplicates, 
+        //first we declare the element and then we check if it exists already
+        let title = document.querySelector('.content-title');
+
+        if (title){
+            
+            title.remove();
+
+        };
+
+        let taskDivTitle = document.createElement('div');
+        let taskMainName = document.createElement('p');
+        let taskMainProject = document.createElement('p');
+        let taskMainDescription = document.createElement('p');
+        let taskMainDueDate = document.createElement('p');
+        let taskMainPriority = document.createElement('p');
+        let taskMainActions = document.createElement('p');
+
+        taskDivTitle.setAttribute('class', 'content-title');
+        
+        taskMainName.textContent = ('Name');
+        taskMainProject.textContent = ('Project');
+        taskMainDescription.textContent = ('Description');
+        taskMainDueDate.textContent = ('Due Date');
+        taskMainPriority.textContent = ('Priority');
+        taskMainActions.textContent = ('Actions');
+
+
+        taskDivTitle.appendChild(taskMainName);
+        taskDivTitle.appendChild(taskMainProject);
+        taskDivTitle.appendChild(taskMainDescription);
+        taskDivTitle.appendChild(taskMainDueDate);
+        taskDivTitle.appendChild(taskMainPriority);
+        taskDivTitle.appendChild(taskMainActions);
+        tasksList.appendChild(taskDivTitle);
+
+    }
+
     function deleteTask(id) {
         tasks = tasks.filter(item => item.taskID !== id);
         console.log('id is:',id);
@@ -348,7 +387,7 @@ let taskID = 0;
         content.appendChild(projectMain);
         content.appendChild(projectTasks);
 
-        loadContentTitle(projectTasks);
+        loadContentTitleForTasksSections(projectTasks);
 
         for (let i=0; i<completedTasks.length; i++) {
 
