@@ -393,6 +393,7 @@ let taskID = 0;
 
             let taskDiv = document.createElement('div');
             let taskNameP = document.createElement('p');
+            let taskProjectP = document.createElement('p');
             let taskDescriptionP = document.createElement('p');
             let taskDateP = document.createElement('p');
             let taskPriorityP = document.createElement('p');
@@ -420,6 +421,7 @@ let taskID = 0;
 
 
             taskNameP.textContent = completedTasks[i].name;
+            taskProjectP.textContent = completedTasks[i].project;
             taskDescriptionP.textContent = completedTasks[i].description;
             taskDateP.textContent = format(parseISO(completedTasks[i].date), 'MM-dd-yy');
             taskPriorityP.textContent = completedTasks[i].priority;
@@ -469,6 +471,7 @@ let taskID = 0;
             taskOptionsDiv.appendChild(taskDelete);
 
             taskDiv.appendChild(taskNameP);
+            taskDiv.appendChild(taskProjectP);
             taskDiv.appendChild(taskDescriptionP);
             taskDiv.appendChild(taskDateP);
             taskDiv.appendChild(taskPriorityP);
