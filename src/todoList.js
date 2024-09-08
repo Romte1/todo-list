@@ -56,6 +56,11 @@ function home () {
 
     });
 
+    navThisWeekDiv.addEventListener('click', () => {
+        removeContent();
+
+    });
+
     navCompletedTasksP.addEventListener('click', () => {
 
         //this is to remove everything from content before loading the section, else it will duplicate injected data
