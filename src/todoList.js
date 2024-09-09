@@ -52,16 +52,22 @@ function home () {
     navigator.appendChild(navProjects);
 
     navTodayP.addEventListener('click', () => {
+
+        //this is to remove everything from content before loading the section, else it will duplicate injected data
         removeContent();
 
     });
 
     navThisWeekDiv.addEventListener('click', () => {
+
+        //this is to remove everything from content before loading the section, else it will duplicate injected data
         removeContent();
 
     });
 
     navAllTasksDiv.addEventListener('click', () => {
+
+        //this is to remove everything from content before loading the section, else it will duplicate injected data
         removeContent();
 
     });
