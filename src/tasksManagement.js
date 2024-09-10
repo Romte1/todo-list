@@ -366,6 +366,10 @@ let taskID = 0;
         console.log('id is:',id);
     }
 
+    function loadAllTasks() {
+        alert('completed tasks!');
+    }
+
     function loadCompletedTasks() {
 
         const completedTasks = tasks.filter(obj => obj.status === true);
@@ -487,4 +491,4 @@ let taskID = 0;
     
 
 
-export default {newTask, loadTasksList, loadCompletedTasks};
+export default {newTask, loadTasksList, loadCompletedTasks, loadAllTasks};
