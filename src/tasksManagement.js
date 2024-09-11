@@ -367,7 +367,116 @@ let taskID = 0;
     }
 
     function loadAllTasks() {
-        alert('completed tasks!');
+
+        const content = document.querySelector('.content');
+        const projectMain = document.createElement('div');
+        const sectionTitle = document.createElement('h1');
+        const projectTasks = document.createElement('div');
+
+        sectionTitle.textContent = 'Completed Tasks';
+
+        projectTasks.setAttribute('class', 'tasks-list');
+
+
+
+        projectMain.appendChild(sectionTitle);
+        
+
+        content.appendChild(projectMain);
+        content.appendChild(projectTasks);
+
+        loadContentTitleForTasksSections(projectTasks);
+
+        for (let i=0; i<tasks.length; i++) {
+
+            let taskDiv = document.createElement('div');
+            let taskNameP = document.createElement('p');
+            let taskProjectP = document.createElement('p');
+            let taskDescriptionP = document.createElement('p');
+            let taskDateP = document.createElement('p');
+            let taskPriorityP = document.createElement('p');
+            let taskOptionsDiv = document.createElement('div');
+            let taskDoneCheckbox = document.createElement('input');
+            let taskEdit = document.createElement('ion-icon');
+            let taskDelete = document.createElement('ion-icon');
+
+
+            taskDiv.setAttribute('class', 'task');
+
+            //set left border color depending on task priority using class tag
+
+            if (tasks[i].priority === 'low') {
+                taskDiv.classList.add('low');
+            }
+
+            if (tasks[i].priority === 'medium') {
+                taskDiv.classList.add('med');
+            }
+
+            if (tasks[i].priority === 'high') {
+                taskDiv.classList.add('high');
+            }
+
+
+            taskNameP.textContent = tasks[i].name;
+            taskProjectP.textContent = tasks[i].project;
+            taskDescriptionP.textContent = tasks[i].description;
+            taskDateP.textContent = format(parseISO(tasks[i].date), 'MM-dd-yy');
+            taskPriorityP.textContent = tasks[i].priority;
+            
+            taskDoneCheckbox.addEventListener('click', () => { 
+
+                //check task status
+                if (taskDoneCheckbox.checked === false) {
+                    tasks[i].status = false;
+                } else {
+                    tasks[i].status = true;
+                };
+
+            });
+
+            //update task status for user
+            if (tasks[i].status === false) {
+                taskDoneCheckbox.checked = false;
+            } else {
+                taskDoneCheckbox.checked = true;
+            }
+
+            taskOptionsDiv.setAttribute('class', 'task-options');
+            
+            taskEdit.setAttribute('name','pencil-outline');
+            taskEdit.setAttribute('class','edit-task');
+
+            taskDelete.setAttribute('name', 'trash-outline');
+            taskDelete.setAttribute('class', 'del-task');
+
+            taskDoneCheckbox.setAttribute('type', 'checkbox');
+
+            //task option event listeners
+
+            taskDelete.addEventListener('click', () => {
+                
+                let id = tasks[i].taskID;
+                console.log(id);
+                deleteTask(id);
+                loadTasksList(projectName);
+                
+
+            });
+
+            taskOptionsDiv.appendChild(taskDoneCheckbox);
+            taskOptionsDiv.appendChild(taskEdit);
+            taskOptionsDiv.appendChild(taskDelete);
+
+            taskDiv.appendChild(taskNameP);
+            taskDiv.appendChild(taskProjectP);
+            taskDiv.appendChild(taskDescriptionP);
+            taskDiv.appendChild(taskDateP);
+            taskDiv.appendChild(taskPriorityP);
+            taskDiv.appendChild(taskOptionsDiv);
+            projectTasks.appendChild(taskDiv);
+
+        };
     }
 
     function loadCompletedTasks() {
