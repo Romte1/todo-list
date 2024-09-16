@@ -50,6 +50,18 @@ let taskID = 0;
         taskDueDateIpt.setAttribute('name', 'DueDate');
         taskDueDateIpt.setAttribute('type', 'date');
 
+        //here we define date input default date, set at the present
+        // Get today's date
+        let today = new Date();
+
+        // Format the date as yyyy-mm-dd
+        let formattedDate = format(today, 'yyyy-MM-dd');
+
+        // Set the default value of the date input field
+        taskDueDateIpt.value = formattedDate;
+
+        
+
         taskDescriptionIpt.setAttribute('id', 'Description');
         taskDescriptionIpt.setAttribute('name', 'Description');
 
