@@ -22,7 +22,7 @@ function home () {
     navMenuTitle2.textContent = 'Projects';
 
     navTodayP.textContent = 'Today';
-    navThisWeekP.textContent = 'This Week';
+    navThisWeekP.textContent = '7 Days';
     navAllTasksP.textContent = 'All Tasks';
     navCompletedTasksP.textContent = 'Completed Tasks';
 
@@ -56,6 +56,8 @@ function home () {
         //this is to remove everything from content before loading the section, else it will duplicate injected data
         removeContent();
 
+        tasks.loadTasksByDate('Today');
+
     });
 
     navThisWeekDiv.addEventListener('click', () => {
@@ -63,13 +65,14 @@ function home () {
         //this is to remove everything from content before loading the section, else it will duplicate injected data
         removeContent();
 
+        tasks.loadTasksByDate('This Week');
+
     });
 
     navAllTasksDiv.addEventListener('click', () => {
 
         //this is to remove everything from content before loading the section, else it will duplicate injected data
         removeContent();
-
         
         tasks.loadAllTasks();
 
@@ -80,7 +83,6 @@ function home () {
         //this is to remove everything from content before loading the section, else it will duplicate injected data
         removeContent();
 
-        
         tasks.loadCompletedTasks();
 
     });
