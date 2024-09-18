@@ -65,7 +65,7 @@ function home () {
         //this is to remove everything from content before loading the section, else it will duplicate injected data
         removeContent();
 
-        tasks.loadTasksByDate('This Week');
+        tasks.loadTasksByDate('7 Days');
 
     });
 

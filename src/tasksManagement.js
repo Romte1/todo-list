@@ -1,4 +1,4 @@
-import { format, parseISO, formatDistance, formatRelative, subDays, differenceInDays } from 'date-fns'
+import { format, parseISO, formatDistance, formatRelative, subDays, differenceInDays, parse } from 'date-fns'
 let tasks = [];
 let taskID = 0;
     function newTask(currentProject) {
@@ -393,13 +393,20 @@ let taskID = 0;
             d.setHours(0, 0, 0, 0); // Set time to midnight
             return d;
         };
-        //
-        const dateLimit = dateSection === 'Today' ? 0 : 6;
-        const today = normalizeDate(new Date());
-        console.log(dateLimit);
+        //This function helps parsing the date that comes directly from obj.date as a string, example: '2024-12-25', filtered below in the relevantTasks variable
+        function dateParse(objDate) {
+            const dateStringFormat = 'yyyy-MM-dd';
+            const parsedDate = parse(objDate, dateStringFormat, new Date());
 
-        const relevantTasks = tasks.filter(obj => differenceInDays(normalizeDate(new Date(obj.date)), today) < dateLimit);
-        console.log(relevantTasks);
+            return parsedDate;
+        }
+        //dateLimit checks the name of dateSection, if it's today, then value is 1, else 7 
+        const dateLimit = dateSection === 'Today' ? 1 : 7;
+        const today = normalizeDate(new Date());
+        
+
+        //this will recruit every tasks depending on the selected days that the section should show, excluding the ones that have surpassed the time limit
+        const relevantTasks = tasks.filter(obj => differenceInDays(normalizeDate(dateParse(obj.date)), today) < dateLimit && differenceInDays(normalizeDate(dateParse(obj.date)), today) >= 0);
 
         const content = document.querySelector('.content');
         const projectMain = document.createElement('div');
@@ -420,7 +427,7 @@ let taskID = 0;
 
         loadContentTitleForTasksSections(projectTasks);
 
-        for (let i=0; i<tasks.length; i++) {
+        for (let i=0; i<relevantTasks.length; i++) {
 
             let taskDiv = document.createElement('div');
             let taskNameP = document.createElement('p');
@@ -438,38 +445,38 @@ let taskID = 0;
 
             //set left border color depending on task priority using class tag
 
-            if (tasks[i].priority === 'low') {
+            if (relevantTasks[i].priority === 'low') {
                 taskDiv.classList.add('low');
             }
 
-            if (tasks[i].priority === 'medium') {
+            if (relevantTasks[i].priority === 'medium') {
                 taskDiv.classList.add('med');
             }
 
-            if (tasks[i].priority === 'high') {
+            if (relevantTasks[i].priority === 'high') {
                 taskDiv.classList.add('high');
             }
 
 
-            taskNameP.textContent = tasks[i].name;
-            taskProjectP.textContent = tasks[i].project;
-            taskDescriptionP.textContent = tasks[i].description;
-            taskDateP.textContent = format(parseISO(tasks[i].date), 'MM-dd-yy');
-            taskPriorityP.textContent = tasks[i].priority;
+            taskNameP.textContent = relevantTasks[i].name;
+            taskProjectP.textContent = relevantTasks[i].project;
+            taskDescriptionP.textContent = relevantTasks[i].description;
+            taskDateP.textContent = format(parseISO(relevantTasks[i].date), 'MM-dd-yy');
+            taskPriorityP.textContent = relevantTasks[i].priority;
             
             taskDoneCheckbox.addEventListener('click', () => { 
 
                 //check task status
                 if (taskDoneCheckbox.checked === false) {
-                    tasks[i].status = false;
+                    relevantTasks[i].status = false;
                 } else {
-                    tasks[i].status = true;
+                    relevantTasks[i].status = true;
                 };
 
             });
 
             //update task status for user
-            if (tasks[i].status === false) {
+            if (relevantTasks[i].status === false) {
                 taskDoneCheckbox.checked = false;
             } else {
                 taskDoneCheckbox.checked = true;
@@ -489,7 +496,7 @@ let taskID = 0;
 
             taskDelete.addEventListener('click', () => {
                 
-                let id = tasks[i].taskID;
+                let id = relevantTasks[i].taskID;
                 console.log(id);
                 deleteTask(id);
                 loadTasksList(projectName);
