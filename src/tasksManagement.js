@@ -240,18 +240,22 @@ let taskID = 0;
 
                 //check task status
                 if (taskDoneCheckbox.checked === false) {
-                    currentProjectTasks[i].status = false;
+                    tasks[i].status = false;
+                    taskDiv.classList.remove('completed');
                 } else {
-                    currentProjectTasks[i].status = true;
+                    tasks[i].status = true;
+                    taskDiv.classList.add('completed');
                 };
 
             });
 
-            //update task status for user
-            if (currentProjectTasks[i].status === false) {
+            //update checkbox status for user after reloading section
+            if (tasks[i].status === false) {
                 taskDoneCheckbox.checked = false;
+                taskDiv.classList.remove('completed');                
             } else {
                 taskDoneCheckbox.checked = true;
+                taskDiv.classList.add('completed');
             }
 
             taskOptionsDiv.setAttribute('class', 'task-options');
@@ -468,18 +472,22 @@ let taskID = 0;
 
                 //check task status
                 if (taskDoneCheckbox.checked === false) {
-                    relevantTasks[i].status = false;
+                    tasks[i].status = false;
+                    taskDiv.classList.remove('completed');
                 } else {
-                    relevantTasks[i].status = true;
+                    tasks[i].status = true;
+                    taskDiv.classList.add('completed');
                 };
 
             });
 
-            //update task status for user
-            if (relevantTasks[i].status === false) {
+            //update checkbox status for user after reloading section
+            if (tasks[i].status === false) {
                 taskDoneCheckbox.checked = false;
+                taskDiv.classList.remove('completed');                
             } else {
                 taskDoneCheckbox.checked = true;
+                taskDiv.classList.add('completed');
             }
 
             taskOptionsDiv.setAttribute('class', 'task-options');
@@ -582,17 +590,21 @@ let taskID = 0;
                 //check task status
                 if (taskDoneCheckbox.checked === false) {
                     tasks[i].status = false;
+                    taskDiv.classList.remove('completed');
                 } else {
                     tasks[i].status = true;
+                    taskDiv.classList.add('completed');
                 };
 
             });
 
-            //update task status for user
+            //update checkbox status for user after reloading section
             if (tasks[i].status === false) {
                 taskDoneCheckbox.checked = false;
+                taskDiv.classList.remove('completed');                
             } else {
                 taskDoneCheckbox.checked = true;
+                taskDiv.classList.add('completed');
             }
 
             taskOptionsDiv.setAttribute('class', 'task-options');
@@ -696,18 +708,22 @@ let taskID = 0;
 
                 //check task status
                 if (taskDoneCheckbox.checked === false) {
-                    completedTasks[i].status = false;
+                    tasks[i].status = false;
+                    taskDiv.classList.remove('completed');
                 } else {
-                    completedTasks[i].status = true;
+                    tasks[i].status = true;
+                    taskDiv.classList.add('completed');
                 };
 
             });
 
-            //update task status for user
-            if (completedTasks[i].status === false) {
+            //update checkbox status for user after reloading section
+            if (tasks[i].status === false) {
                 taskDoneCheckbox.checked = false;
+                taskDiv.classList.remove('completed');                
             } else {
                 taskDoneCheckbox.checked = true;
+                taskDiv.classList.add('completed');
             }
 
             taskOptionsDiv.setAttribute('class', 'task-options');
