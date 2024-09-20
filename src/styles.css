@@ -50,10 +50,14 @@ header {
   flex-direction: column;
   padding:16px 0;
   justify-content: flex-start;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   h2{
     padding-left: 5%;
-    color:rgb(68, 68, 68)
+    color:rgb(68, 68, 68);
+    
   }
 
   >div:not(.projects) {
@@ -204,6 +208,9 @@ header {
         display: flex;
         justify-content: center;
         font-weight: 700;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
     }
@@ -230,6 +237,9 @@ header {
         flex-grow: 1;
         display: flex;
         justify-content: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       .task-options {
