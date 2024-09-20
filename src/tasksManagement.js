@@ -767,14 +767,22 @@ let taskID = 0;
    }
 
    function tasksProjectNameChanger(name, newName) {
-        const updateNames = tasks.forEach(obj => {
+        const updateTasksProjectName = tasks.forEach(obj => {
             if (obj.project === name) {
                 obj.project = newName;
             }
         });
-   }
+   };
+
+   function tasksDeletion(name) {
+    for (let i = tasks.length - 1; i >= 0; i--) {
+        if (tasks[i].project === name) {
+            tasks.splice(i, 1);
+        }
+    }
+   };
 
     
 
 
-export default {newTask, loadTasksList, loadCompletedTasks, loadTasksByDate, loadAllTasks, tasksProjectNameChanger};
+export default {newTask, loadTasksList, loadCompletedTasks, loadTasksByDate, loadAllTasks, tasksProjectNameChanger, tasksDeletion};

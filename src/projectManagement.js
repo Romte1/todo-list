@@ -226,7 +226,7 @@ import tasks from './tasksManagement';
             Projects = Projects.filter(item => item.name !== name);
             deleteProjectModal.remove();
             updateProjectsList();
-            console.log(Projects);
+            tasks.tasksDeletion(name);
             document.querySelector('.content').innerHTML = '';
             
         });
