@@ -164,6 +164,11 @@ import tasks from './tasksManagement';
             let index = Projects.findIndex(project => project.name === name);
             Projects[index].name = newName.charAt(0).toUpperCase() + newName.slice(1);
             updateProjectsList();
+
+            //Edits every task that is under this projects name, so every task changes projects name to the new one
+            tasks.tasksProjectNameChanger(name, Projects[index].name);
+
+
             editProjectModal.remove();
             document.querySelector('.content').innerHTML = '';
 

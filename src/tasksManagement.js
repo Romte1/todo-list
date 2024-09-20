@@ -764,9 +764,17 @@ let taskID = 0;
 
 
 
-    }
+   }
+
+   function tasksProjectNameChanger(name, newName) {
+        const updateNames = tasks.forEach(obj => {
+            if (obj.project === name) {
+                obj.project = newName;
+            }
+        });
+   }
 
     
 
 
-export default {newTask, loadTasksList, loadCompletedTasks, loadTasksByDate, loadAllTasks};
+export default {newTask, loadTasksList, loadCompletedTasks, loadTasksByDate, loadAllTasks, tasksProjectNameChanger};
