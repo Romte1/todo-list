@@ -57,7 +57,7 @@ header {
   h2{
     padding-left: 5%;
     color:rgb(68, 68, 68);
-    
+
   }
 
   >div:not(.projects) {
@@ -103,9 +103,9 @@ header {
       display:flex;
       align-items: center;
       justify-content: flex-end;
-      gap:4px;
       cursor: pointer;
-      padding: 0 4px;
+      gap:4px;
+      padding-right: 4px;
       
       &:hover{
         background-color: rgba(0, 0, 0, 0.1);
@@ -119,15 +119,20 @@ header {
       }
   
       >p{
-        padding-left: 10%;
+        padding-left: 7.5%;
         height: 100%;
         display: flex;
+        margin-right: auto;
         align-items: center;
-        flex-grow: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
       
       .del-project {
         padding:4px;
+        font-size: 20px;
+        flex-shrink: 0;
 
         &:hover {
           background-color: rgb(230, 55, 55);
@@ -139,6 +144,8 @@ header {
 
       .edit-project {
         padding:4px;
+        font-size: 20px;
+        flex-shrink: 0;
 
         &:hover {
           background-color: rgb(81, 206, 56);
