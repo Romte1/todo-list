@@ -133,6 +133,7 @@ import tasks from './tasksManagement';
         editProjectP.textContent = 'Rename project';
 
         renameProjectIpt.value = name;
+        renameProjectIpt.select();
 
         editProjectConfirmButton.textContent = 'Confirm';
         editProjectCancelButton.textContent = 'Cancel';
