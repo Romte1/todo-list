@@ -208,7 +208,7 @@ import tasks from './tasksManagement';
         const deleteProjectCancelButton = document.createElement('button');
 
         deleteProjectModal.setAttribute('class', 'modal-delete-project');
-        deleteProjectP.textContent = 'This project will be deleted';
+        deleteProjectP.innerHTML = 'Warning!<br>This project will be deleted';
 
         deleteProjectConfirmButton.textContent = 'Delete';
         deleteProjectCancelButton.textContent = 'Cancel';
