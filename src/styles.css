@@ -13,6 +13,7 @@
 }
 
 
+
 body {
   min-height: 100dvh;
   font-family: 'Montserrat';
@@ -340,6 +341,11 @@ dialog.modal {
   border-radius: 8px;
   width: 300px;
 
+  ::selection {
+    color: white;
+    background: black;
+  }
+
   &::backdrop {
       backdrop-filter: blur(3px);
   }
@@ -408,6 +414,11 @@ dialog.modal-edit-project {
   background: rgb(241, 241, 241);
   border-radius: 8px;
   width: 300px;
+
+  ::selection {
+    color: white;
+    background: black;
+  }
 
   &::backdrop {
       backdrop-filter: blur(3px);
@@ -546,6 +557,11 @@ dialog.modal-new-task {
   width: 400px;
   display:flex;
   flex-direction: column;
+
+  ::selection {
+    color: white;
+    background: black;
+  }
 
   &::backdrop {
       backdrop-filter: blur(3px);
