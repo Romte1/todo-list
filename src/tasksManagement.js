@@ -273,6 +273,7 @@ let taskID = 0;
             taskDelete.addEventListener('click', () => {
                 
                 let id = currentProjectTasks[i].taskID;
+                let projectName = currentProjectTasks[i].project;
                 console.log(id);
                 deleteTask(id);
                 loadTasksList(projectName);
