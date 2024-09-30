@@ -270,6 +270,10 @@ let taskID = 0;
 
             //task option event listeners
 
+            taskEdit.addEventListener('click', () => {
+                alert('editing task!');
+            })
+
             taskDelete.addEventListener('click', () => {
                 
                 let id = currentProjectTasks[i].taskID;
