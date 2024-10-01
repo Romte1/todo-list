@@ -118,7 +118,7 @@ let taskID = 0;
 
             if (nameValue !== '' && descrValue !== '' && dateValue !== '' && prioValue !== '') {
                 taskID = taskID + 1;
-                alert(currentProject + taskID);
+                //alert(currentProject + taskID);
 
                 var task = new Task(taskID, currentProject, nameValue, descrValue, dateValue, prioValue);
                 tasks.push(task);
