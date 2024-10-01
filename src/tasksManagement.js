@@ -270,14 +270,15 @@ let taskID = 0;
 
             //task option event listeners
 
+            let id = currentProjectTasks[i].taskID;
+            let projectName = currentProjectTasks[i].project;
+
             taskEdit.addEventListener('click', () => {
-                alert('editing task!');
+                editTask(id);
+                loadTasksList(projectName);
             })
 
             taskDelete.addEventListener('click', () => {
-                
-                let id = currentProjectTasks[i].taskID;
-                let projectName = currentProjectTasks[i].project;
                 console.log(id);
                 deleteTask(id);
                 loadTasksList(projectName);
@@ -388,6 +389,10 @@ let taskID = 0;
         taskDivTitle.appendChild(taskMainActions);
         tasksList.appendChild(taskDivTitle);
 
+    }
+
+    function editTask(id) {
+        alert('editing task!');
     }
 
     function deleteTask(id) {
