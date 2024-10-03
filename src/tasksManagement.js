@@ -392,6 +392,102 @@ let taskID = 0;
 
     function editTask(id) {
         alert('editing task!');
+
+        let eTask = tasks.find(obj => obj.taskID === id );
+        console.log ('its', eTask.TaskID);
+
+        const body = document.querySelector('body');
+        const editTaskModal = document.createElement('dialog');
+        const editTaskP = document.createElement('p');
+        const newTaskNameIpt = document.createElement('input');
+        const newTaskDescriptionIpt = document.createElement('input');
+        const newTaskDateIpt = document.createElement('input');
+        const newTaskPrioritySel = document.createElement('select');
+        const taskPriorityLowOp = document.createElement('option');
+        const taskPriorityMedOp = document.createElement('option');
+        const taskPriorityHighOp = document.createElement('option');
+        const editTaskConfirmButton = document.createElement('button');
+        const editTaskCancelButton = document.createElement('button');
+
+
+        editTaskModal.setAttribute('class', 'modal-edit-task');
+        editTaskP.textContent = 'Edit task';
+
+        newTaskNameIpt.value = eTask.name;
+        newTaskNameIpt.select();
+
+        newTaskDescriptionIpt.value = eTask.description;
+
+        newTaskDateIpt.value = eTask.date;
+
+        //here we add the options to the task priority selection
+
+        taskPriorityLowOp.textContent = 'Low';
+        taskPriorityLowOp.value = 'low';
+        newTaskPrioritySel.appendChild(taskPriorityLowOp);
+
+        taskPriorityMedOp.textContent = 'Medium';
+        taskPriorityMedOp.value = 'medium';
+        newTaskPrioritySel.appendChild(taskPriorityMedOp);
+
+        taskPriorityHighOp.textContent = 'High';
+        taskPriorityHighOp.value = 'high';
+        newTaskPrioritySel.appendChild(taskPriorityHighOp);
+
+
+        //this sets the medium option from select as default
+
+        newTaskPrioritySel.selectedIndex = 1;
+
+
+        editTaskConfirmButton.textContent = 'Confirm';
+        editTaskCancelButton.textContent = 'Cancel';
+
+        editTaskConfirmButton.setAttribute('class', 'btn-confirm');
+        editTaskCancelButton.setAttribute('class', 'btn-cancel');
+
+        editTaskConfirmButton.addEventListener('click', () => {
+
+            let newName = newTaskNameIpt.value;
+            let newDescription = newTaskDescriptionIpt.value;
+            let newDate = newTaskDateIpt.value;
+            let newPriority = newTaskPrioritySel.value;
+
+            let index = tasks.findIndex(task => task.taskID === id);
+            tasks[index].name = newName;
+            tasks[index].description = newDescription;
+            tasks[index].date = newDate;
+            tasks[index].priority = newPriority;
+
+
+            editTaskModal.remove();
+
+        });
+
+        editTaskCancelButton.addEventListener('click', () => {
+            editTaskModal.remove();
+        });
+
+        editTaskModal.appendChild(editTaskP);
+        editTaskModal.appendChild(newTaskNameIpt);
+        editTaskModal.appendChild(newTaskDescriptionIpt);
+        editTaskModal.appendChild(newTaskDateIpt);
+        editTaskModal.appendChild(newTaskPrioritySel);
+
+        editTaskModal.appendChild(editTaskConfirmButton);
+        editTaskModal.appendChild(editTaskCancelButton);
+
+        body.appendChild(editTaskModal);
+        editTaskModal.showModal();
+
+        // removes modal when pressin escape key
+        document.addEventListener('keyup',function(e){
+            if (e.key === "Escape") { 
+                
+                editTaskModal.remove();
+            }
+        });       
+
     }
 
     function deleteTask(id, projectName) {
