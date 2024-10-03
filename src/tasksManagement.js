@@ -280,8 +280,7 @@ let taskID = 0;
 
             taskDelete.addEventListener('click', () => {
                 console.log(id);
-                deleteTask(id);
-                loadTasksList(projectName);
+                deleteTask(id, projectName);
                 
 
             });
@@ -395,9 +394,60 @@ let taskID = 0;
         alert('editing task!');
     }
 
-    function deleteTask(id) {
-        tasks = tasks.filter(item => item.taskID !== id);
+    function deleteTask(id, projectName) {
         console.log('id is:',id);
+
+        const body = document.querySelector('body');
+        const deleteTaskModal = document.createElement('dialog');
+        const deleteTaskP = document.createElement('p');
+        const deleteTaskConfirmButton = document.createElement('button');
+        const deleteTaskCancelButton = document.createElement('button');
+
+        deleteTaskModal.setAttribute('class', 'modal-delete-project');
+        deleteTaskP.innerHTML = 'Warning!<br>This task will be deleted';
+
+        deleteTaskConfirmButton.textContent = 'Delete';
+        deleteTaskCancelButton.textContent = 'Cancel';
+
+        deleteTaskConfirmButton.setAttribute('class', 'btn-confirm');
+        deleteTaskCancelButton.setAttribute('class', 'btn-cancel');
+
+
+
+        deleteTaskModal.appendChild(deleteTaskP);
+        deleteTaskModal.appendChild(deleteTaskConfirmButton);
+        deleteTaskModal.appendChild(deleteTaskCancelButton);
+
+        deleteTaskConfirmButton.addEventListener('click', () => {
+
+            tasks = tasks.filter(item => item.taskID !== id);
+            deleteTaskModal.remove();
+            loadTasksList(projectName);
+            
+        });
+
+        deleteTaskCancelButton.addEventListener('click',() => {
+            
+            deleteTaskModal.remove();
+
+        });
+
+
+
+        body.appendChild(deleteTaskModal);
+
+        deleteTaskModal.showModal();
+
+        //to avoid focusing a button right after opening the dialog
+        deleteTaskModal.focus();
+
+        // removes modal when pressin escape key
+        document.addEventListener('keyup',function(e){
+            if (e.key === "Escape") { 
+                
+                deleteTaskModal.remove();
+            }
+        });
     }
 
     function loadTasksByDate(dateSection) {
