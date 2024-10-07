@@ -240,17 +240,17 @@ let taskID = 0;
 
                 //check task status
                 if (taskDoneCheckbox.checked === false) {
-                    tasks[i].status = false;
+                    currentProjectTasks[i].status = false;
                     taskDiv.classList.remove('completed');
                 } else {
-                    tasks[i].status = true;
+                    currentProjectTasks[i].status = true;
                     taskDiv.classList.add('completed');
                 };
 
             });
 
             //update checkbox status for user after reloading section
-            if (tasks[i].status === false) {
+            if (currentProjectTasks[i].status === false) {
                 taskDoneCheckbox.checked = false;
                 taskDiv.classList.remove('completed');                
             } else {
@@ -805,6 +805,7 @@ let taskID = 0;
     function loadCompletedTasks() {
 
         const completedTasks = tasks.filter(obj => obj.status === true);
+        console.log(completedTasks);
 
         const content = document.querySelector('.content');
         const projectMain = document.createElement('div');
@@ -866,17 +867,17 @@ let taskID = 0;
 
                 //check task status
                 if (taskDoneCheckbox.checked === false) {
-                    tasks[i].status = false;
+                    completedTasks[i].status = false;
                     taskDiv.classList.remove('completed');
                 } else {
-                    tasks[i].status = true;
+                    completedTasks[i].status = true;
                     taskDiv.classList.add('completed');
                 };
 
             });
 
             //update checkbox status for user after reloading section
-            if (tasks[i].status === false) {
+            if (completedTasks[i].status === false) {
                 taskDoneCheckbox.checked = false;
                 taskDiv.classList.remove('completed');                
             } else {

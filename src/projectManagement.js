@@ -300,6 +300,7 @@ import tasks from './tasksManagement';
         content.appendChild(projectTasks);
 
         tasks.loadTasksList(name);
+        console.log('project name is :', name)
     }
 
     function removeContent() {
