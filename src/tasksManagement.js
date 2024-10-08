@@ -391,7 +391,6 @@ let taskID = 0;
     }
 
     function editTask(id) {
-        alert('editing task!');
 
         let eTask = tasks.find(obj => obj.taskID === id );
         console.log ('its', eTask.TaskID);
@@ -408,6 +407,7 @@ let taskID = 0;
         const taskPriorityLowOp = document.createElement('option');
         const taskPriorityMedOp = document.createElement('option');
         const taskPriorityHighOp = document.createElement('option');
+        const editTaskButtonsDiv = document.createElement('div');
         const editTaskConfirmButton = document.createElement('button');
         const editTaskCancelButton = document.createElement('button');
 
@@ -415,6 +415,8 @@ let taskID = 0;
         editTaskModal.setAttribute('class', 'modal-edit-task');
         editTaskP.textContent = 'Edit task';
 
+
+        newTaskNameLbl.textContent = 'Name:';
         newTaskNameIpt.value = eTask.name;
         newTaskNameIpt.select();
 
@@ -470,14 +472,19 @@ let taskID = 0;
             editTaskModal.remove();
         });
 
+        newTaskNameDiv.appendChild(newTaskNameLbl);
+        newTaskNameDiv.appendChild(newTaskNameIpt);
+
+        editTaskButtonsDiv.appendChild(editTaskConfirmButton);
+        editTaskButtonsDiv.appendChild(editTaskCancelButton);
+
         editTaskModal.appendChild(editTaskP);
-        editTaskModal.appendChild(newTaskNameIpt);
+        editTaskModal.appendChild(newTaskNameDiv);
         editTaskModal.appendChild(newTaskDescriptionIpt);
         editTaskModal.appendChild(newTaskDateIpt);
         editTaskModal.appendChild(newTaskPrioritySel);
 
-        editTaskModal.appendChild(editTaskConfirmButton);
-        editTaskModal.appendChild(editTaskCancelButton);
+        editTaskModal.appendChild(editTaskButtonsDiv);
 
         body.appendChild(editTaskModal);
         editTaskModal.showModal();

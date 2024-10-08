@@ -586,17 +586,6 @@ dialog.modal-new-task {
     color:white;
   }
 
-  >button {
-      padding: 8px 16px;
-      border-radius: 8px;
-      grid-row: 4;
-      grid-column: 1/3;
-
-      &:hover {
-        background-color: rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-      }
-  }
 
   div {
     display: flex;
@@ -692,12 +681,19 @@ dialog.modal-new-task {
 
 .modal-edit-task {
   display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto auto auto;
   gap: 8px;
-  padding:16px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  padding:32px;
+  background: rgb(241, 241, 241);
+  border-radius: 8px;
+  width: 400px;
+  display:flex;
+  flex-direction: column;
 
   >p {
     font-size: 28px;
@@ -707,6 +703,66 @@ dialog.modal-new-task {
 
   >label { 
     align-self: center;
+  }
+
+  div {
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+
+    >label { 
+      align-self: center;
+    }
+  
+    >input {
+      width: 220px;
+      height: 28px;
+      outline: none;
+      border-radius: 4px;
+      padding-left: 2px;
+      align-self: center;
+      border: 1px solid black;
+    }
+
+    >select {
+      width: 220px;
+      height: 28px;
+      grid-row: 2;
+      outline: none;
+      border-radius: 4px;
+      padding-left: 2px;
+      align-self: center;
+      background-color: white;
+      border: 1px solid black;
+    }
+
+    >button {
+      width: 33%;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 800;
+    }
+
+    >.btn-confirm {
+
+      &:hover {
+        background-color: rgb(81, 206, 56);
+        cursor: pointer;
+        color: white;
+      }
+
+    }
+
+    >.btn-cancel {
+
+      &:hover {
+        background-color: rgba(255, 10, 10, 0.7);
+        cursor: pointer;
+        color: white;
+      }
+
+    }
+
   }
 
   >input {
@@ -731,33 +787,6 @@ dialog.modal-new-task {
     border: 1px solid black;
   }
 
-  >button {
-    display:flex;
-    justify-content: center;
-    width: 33%;
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-weight: 800;
-  }
-
-  >.btn-cancel {
-
-    &:hover {
-      background-color: rgba(255, 10, 10, 0.7);
-      cursor: pointer;
-      color: white;
-    }
-
-  }
-
-  >.btn-confirm {
-
-    &:hover {
-    background-color: rgb(81, 206, 56);
-    cursor: pointer;
-    color: white;
-    }
-  }
 }
 
 footer {
