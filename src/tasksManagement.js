@@ -401,8 +401,14 @@ let taskID = 0;
         const newTaskNameDiv = document.createElement('div');
         const newTaskNameLbl = document.createElement('label');
         const newTaskNameIpt = document.createElement('input');
+        const newTaskDescriptionDiv = document.createElement('div');
+        const newTaskDescriptionLbl = document.createElement('label');
         const newTaskDescriptionIpt = document.createElement('input');
+        const newTaskDateDiv = document.createElement('div');
+        const newTaskDateLbl = document.createElement('label');
         const newTaskDateIpt = document.createElement('input');
+        const newTaskPriorityDiv = document.createElement('div');
+        const newTaskPriorityLbl = document.createElement('label');
         const newTaskPrioritySel = document.createElement('select');
         const taskPriorityLowOp = document.createElement('option');
         const taskPriorityMedOp = document.createElement('option');
@@ -420,10 +426,13 @@ let taskID = 0;
         newTaskNameIpt.value = eTask.name;
         newTaskNameIpt.select();
 
+        newTaskDescriptionLbl.textContent = 'Description:';
         newTaskDescriptionIpt.value = eTask.description;
 
+        newTaskDateLbl.textContent = 'Date:';
         newTaskDateIpt.value = eTask.date;
 
+        newTaskPriorityLbl.textContent = 'Priority:';
         //here we add the options to the task priority selection
 
         taskPriorityLowOp.textContent = 'Low';
@@ -474,15 +483,21 @@ let taskID = 0;
 
         newTaskNameDiv.appendChild(newTaskNameLbl);
         newTaskNameDiv.appendChild(newTaskNameIpt);
+        newTaskDescriptionDiv.appendChild(newTaskDescriptionLbl);
+        newTaskDescriptionDiv.appendChild(newTaskDescriptionIpt);
+        newTaskDateDiv.appendChild(newTaskDateLbl);
+        newTaskDateDiv.appendChild(newTaskDateIpt);
+        newTaskPriorityDiv.appendChild(newTaskPriorityLbl);
+        newTaskPriorityDiv.appendChild(newTaskPrioritySel);
 
         editTaskButtonsDiv.appendChild(editTaskConfirmButton);
         editTaskButtonsDiv.appendChild(editTaskCancelButton);
 
         editTaskModal.appendChild(editTaskP);
         editTaskModal.appendChild(newTaskNameDiv);
-        editTaskModal.appendChild(newTaskDescriptionIpt);
-        editTaskModal.appendChild(newTaskDateIpt);
-        editTaskModal.appendChild(newTaskPrioritySel);
+        editTaskModal.appendChild(newTaskDescriptionDiv);
+        editTaskModal.appendChild(newTaskDateDiv);
+        editTaskModal.appendChild(newTaskPriorityDiv);
 
         editTaskModal.appendChild(editTaskButtonsDiv);
 
