@@ -274,8 +274,7 @@ let taskID = 0;
             let projectName = currentProjectTasks[i].project;
 
             taskEdit.addEventListener('click', () => {
-                editTask(id);
-                loadTasksList(projectName);
+                editTask(id, projectName);
             })
 
             taskDelete.addEventListener('click', () => {
@@ -390,7 +389,7 @@ let taskID = 0;
 
     }
 
-    function editTask(id) {
+    function editTask(id, projectName) {
 
         let eTask = tasks.find(obj => obj.taskID === id );
         console.log ('its', eTask.TaskID);
@@ -474,6 +473,7 @@ let taskID = 0;
 
 
             editTaskModal.remove();
+            loadTasksList(projectName);
 
         });
 
