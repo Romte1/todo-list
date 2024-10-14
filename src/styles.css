@@ -317,7 +317,12 @@ header {
     }
 
     .completed {
-      background-color: rgb(191, 235, 170)
+      background-color: rgb(191, 235, 170);
+
+      &:hover {
+        background-color: rgb(143, 230, 99)
+        
+      }
     }
 
 
