@@ -412,6 +412,8 @@ let taskID = 0;
         const taskPriorityLowOp = document.createElement('option');
         const taskPriorityMedOp = document.createElement('option');
         const taskPriorityHighOp = document.createElement('option');
+        const taskErrorDiv = document.createElement('div');
+        const taskErrorLbl = document.createElement('label');
         const editTaskButtonsDiv = document.createElement('div');
         const editTaskConfirmButton = document.createElement('button');
         const editTaskCancelButton = document.createElement('button');
@@ -451,6 +453,7 @@ let taskID = 0;
 
         newTaskPrioritySel.selectedIndex = 1;
 
+        taskErrorDiv.setAttribute('class', 'error-container');
 
         editTaskConfirmButton.textContent = 'Confirm';
         editTaskCancelButton.textContent = 'Cancel';
@@ -465,15 +468,24 @@ let taskID = 0;
             let newDate = newTaskDateIpt.value;
             let newPriority = newTaskPrioritySel.value;
 
-            let index = tasks.findIndex(task => task.taskID === id);
-            tasks[index].name = newName;
-            tasks[index].description = newDescription;
-            tasks[index].date = newDate;
-            tasks[index].priority = newPriority;
+            if (newName !== '' && newDescription !== '' && newDate !== '' && newPriority !== '') {
 
+                let index = tasks.findIndex(task => task.taskID === id);
+                tasks[index].name = newName;
+                tasks[index].description = newDescription;
+                tasks[index].date = newDate;
+                tasks[index].priority = newPriority;
+    
+    
+                editTaskModal.remove();
+                loadTasksList(projectName);
 
-            editTaskModal.remove();
-            loadTasksList(projectName);
+            }
+
+            else {
+                taskErrorLbl.setAttribute('class', 'error-msg');
+                taskErrorLbl.textContent = 'Fields are required!';
+            }
 
         });
 
@@ -490,6 +502,8 @@ let taskID = 0;
         newTaskPriorityDiv.appendChild(newTaskPriorityLbl);
         newTaskPriorityDiv.appendChild(newTaskPrioritySel);
 
+        taskErrorDiv.appendChild(taskErrorLbl);
+
         editTaskButtonsDiv.appendChild(editTaskConfirmButton);
         editTaskButtonsDiv.appendChild(editTaskCancelButton);
 
@@ -498,6 +512,8 @@ let taskID = 0;
         editTaskModal.appendChild(newTaskDescriptionDiv);
         editTaskModal.appendChild(newTaskDateDiv);
         editTaskModal.appendChild(newTaskPriorityDiv);
+
+        editTaskModal.appendChild(taskErrorDiv);
 
         editTaskModal.appendChild(editTaskButtonsDiv);
 
