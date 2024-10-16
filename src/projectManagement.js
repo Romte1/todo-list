@@ -284,7 +284,7 @@ import tasks from './tasksManagement';
 
         taskAdd.setAttribute('name', 'add-circle-outline');
         taskAdd.setAttribute('class', 'add-task');
-
+        
         projectTasks.setAttribute('class', 'tasks-list');
 
         taskAdd.addEventListener('click', () => {
