@@ -249,6 +249,34 @@ header {
   
       }
 
+      >div {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        
+        .tooltiptext {
+          visibility: hidden;
+          width: 120px;
+          background-color: black;
+          color: #fff;
+          text-align: center;
+          border-radius: 6px;
+          padding: 5px 0;
+          
+          /* Position the tooltip */
+          position: absolute;
+          z-index: 1;
+          top: 100%;
+          left: 50%;
+          margin-left: -60px;
+        }
+        
+        &:hover .tooltiptext {
+            visibility: visible;
+        }
+      }
       >p {
         flex-grow: 1;
         display: flex;

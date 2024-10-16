@@ -205,7 +205,9 @@ let taskID = 0;
 
             let taskDiv = document.createElement('div');
             let taskNameP = document.createElement('p');
+            let taskDescriptionDiv = document.createElement('div');
             let taskDescriptionP = document.createElement('p');
+            let taskDescriptionSpan = document.createElement('span');
             let taskDateP = document.createElement('p');
             let taskPriorityP = document.createElement('p');
             let taskOptionsDiv = document.createElement('div');
@@ -235,6 +237,10 @@ let taskID = 0;
             taskDescriptionP.textContent = currentProjectTasks[i].description;
             taskDateP.textContent = format(parseISO(currentProjectTasks[i].date), 'MM-dd-yy');
             taskPriorityP.textContent = currentProjectTasks[i].priority;
+
+            //tooltip text
+            taskDescriptionSpan.setAttribute('class', 'tooltiptext');
+            taskDescriptionSpan.textContent = currentProjectTasks[i].description;
             
             taskDoneCheckbox.addEventListener('click', () => { 
 
@@ -284,12 +290,15 @@ let taskID = 0;
 
             });
 
+            taskDescriptionDiv.appendChild(taskDescriptionP);
+            taskDescriptionDiv.appendChild(taskDescriptionSpan);
+
             taskOptionsDiv.appendChild(taskDoneCheckbox);
             taskOptionsDiv.appendChild(taskEdit);
             taskOptionsDiv.appendChild(taskDelete);
 
             taskDiv.appendChild(taskNameP);
-            taskDiv.appendChild(taskDescriptionP);
+            taskDiv.appendChild(taskDescriptionDiv);
             taskDiv.appendChild(taskDateP);
             taskDiv.appendChild(taskPriorityP);
             taskDiv.appendChild(taskOptionsDiv);
