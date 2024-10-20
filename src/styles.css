@@ -255,15 +255,24 @@ header {
         justify-content: center;
         position: relative;
 
+        >p {
+          flex-grow: 1;
+          display: flex;
+          justify-content: center;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
         
         .tooltiptext {
           visibility: hidden;
-          width: 120px;
+          width: auto;
           background-color: rgb(60, 60, 60);
           color: #fff;
           text-align: center;
           border-radius: 6px;
-          padding: 2px 0;
+          padding: 2px 4px;
           
           /* Position the tooltip */
           position: absolute;
