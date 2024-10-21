@@ -255,15 +255,6 @@ header {
         justify-content: center;
         position: relative;
 
-        >p {
-          flex-grow: 1;
-          display: flex;
-          justify-content: center;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-
         
         .tooltiptext {
           visibility: hidden;
@@ -279,7 +270,7 @@ header {
           z-index: 1;
           top: 100%;
           left: 50%;
-          margin-left: -60px;
+          transform: translateX(-50%);
         }
         
         &:hover .tooltiptext {
