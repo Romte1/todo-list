@@ -846,6 +846,9 @@ dialog.modal-new-task {
 }
 
 footer {
+  display:flex;
+  justify-content: center;
+  gap:4px;
   grid-column: span 2;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
