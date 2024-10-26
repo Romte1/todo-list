@@ -848,6 +848,7 @@ dialog.modal-new-task {
 footer {
   display:flex;
   justify-content: center;
+  align-items: center;
   gap:4px;
   grid-column: span 2;
   font-family: 'Montserrat', sans-serif;
@@ -860,4 +861,19 @@ footer {
   text-align: center;
   border: var(--custom-border);
   border-radius: 8px;
+
+}
+
+.githubIcon {
+  color:rgb(255, 255, 255);
+  transition: 0.3s;
+  font-size: 24px;
+  display: flex;
+
+  >:hover {
+
+      color:red;
+      font-size: 24px;
+
+  }
 }
