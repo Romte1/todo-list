@@ -238,6 +238,8 @@ let taskID = 0;
             taskDateP.textContent = format(parseISO(currentProjectTasks[i].date), 'MM-dd-yy');
             taskPriorityP.textContent = currentProjectTasks[i].priority;
 
+            taskDescriptionDiv.setAttribute('class', 'descriptionDiv');
+
             //tooltip text
             taskDescriptionSpan.setAttribute('class', 'tooltiptext');
             taskDescriptionSpan.textContent = currentProjectTasks[i].description;

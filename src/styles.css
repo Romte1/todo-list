@@ -249,11 +249,20 @@ header {
   
       }
 
-      >div {
+      >.descriptionDiv {
         flex-grow: 1;
         display: flex;
         justify-content: center;
         position: relative;
+
+        >p {
+          display: flex;
+          justify-content: left;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 15ch;
+        }
 
         
         .tooltiptext {
