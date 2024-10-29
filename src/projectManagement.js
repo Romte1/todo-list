@@ -263,9 +263,19 @@ import tasks from './tasksManagement';
     }
 
     function defaultProject() {
-        const defaultProject = new Project('Default Project');
-        Projects.push(defaultProject);
-        updateProjectsList();
+
+        let defaultPage = JSON.parse(localStorage.getItem('defaultP'));
+        console.log(defaultPage);
+
+        if (defaultPage === null) {
+            const defaultProject = new Project('Default Project');
+            Projects.push(defaultProject);
+            updateProjectsList();
+        }
+
+        defaultPage = false;
+        localStorage.setItem('defaultP', JSON.stringify(defaultPage));
+        
 
     };
 
