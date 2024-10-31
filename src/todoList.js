@@ -96,6 +96,8 @@ function home () {
         document.querySelector('.content').innerHTML = '';
     }
 
+    
+
 }
 
 

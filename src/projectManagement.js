@@ -1,4 +1,5 @@
 import tasks from './tasksManagement';
+import storage from './localStorage';
 
     let Projects = [];
     
@@ -270,9 +271,12 @@ import tasks from './tasksManagement';
         if (defaultPage === null) {
             const defaultProject = new Project('Default Project');
             Projects.push(defaultProject);
-            updateProjectsList();
+            storage.updateLocalStorageProjects(Projects);
+        } else {
+            Projects = storage.getLocalStorageProjects(Projects);
         }
-
+        updateProjectsList();
+        console.log(Projects);
         defaultPage = false;
         localStorage.setItem('defaultP', JSON.stringify(defaultPage));
         
