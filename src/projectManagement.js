@@ -227,6 +227,7 @@ import storage from './localStorage';
         deleteProjectConfirmButton.addEventListener('click', () => {
 
             Projects = Projects.filter(item => item.name !== name);
+            storage.updateLocalStorageProjects(Projects);
             deleteProjectModal.remove();
             updateProjectsList();
             tasks.tasksDeletion(name);
