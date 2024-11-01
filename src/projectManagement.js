@@ -37,6 +37,7 @@ import storage from './localStorage';
                 }
                 var project = new Project(newProjectIpt.value);
                 Projects.push(project);
+                storage.updateLocalStorageProjects(Projects);
                 console.log(Projects.length);
                 newProjectModal.remove();
                 updateProjectsList();
@@ -273,7 +274,7 @@ import storage from './localStorage';
             Projects.push(defaultProject);
             storage.updateLocalStorageProjects(Projects);
         } else {
-            Projects = storage.getLocalStorageProjects(Projects);
+            Projects = storage.getLocalStorageProjects();
         }
         updateProjectsList();
         console.log(Projects);
