@@ -167,6 +167,7 @@ import storage from './localStorage';
             let index = Projects.findIndex(project => project.name === name);
             Projects[index].name = newName.charAt(0).toUpperCase() + newName.slice(1);
             updateProjectsList();
+            storage.updateLocalStorageProjects(Projects);
 
             //Edits every task that is under this projects name, so every task changes projects name to the new one
             tasks.tasksProjectNameChanger(name, Projects[index].name);
