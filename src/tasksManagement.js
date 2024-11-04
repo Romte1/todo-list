@@ -1,5 +1,6 @@
-import { format, parseISO, formatDistance, formatRelative, subDays, differenceInDays, parse } from 'date-fns'
-let tasks = [];
+import { format, parseISO, formatDistance, formatRelative, subDays, differenceInDays, parse } from 'date-fns';
+import storage from './localStorage';
+let tasks = storage.getLocalStorageTasks();
 let taskID = 0;
     function newTask(currentProject) {
         const body = document.querySelector('body');
@@ -123,6 +124,7 @@ let taskID = 0;
                 var task = new Task(taskID, currentProject, nameValue, descrValue, dateValue, prioValue);
                 tasks.push(task);
                 loadTasksList(currentProject);
+                storage.updateLocalStorageTasks(tasks);
                 console.log(tasks);
 
                 newTaskModal.remove();
