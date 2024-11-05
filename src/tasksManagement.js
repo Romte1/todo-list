@@ -571,6 +571,7 @@ let taskID = 0;
 
             tasks = tasks.filter(item => item.taskID !== id);
             deleteTaskModal.remove();
+            storage.updateLocalStorageTasks(tasks);
             loadTasksList(projectName);
             
         });
