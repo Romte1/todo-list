@@ -492,6 +492,7 @@ let taskID = 0;
     
                 editTaskModal.remove();
                 loadTasksList(projectName);
+                storage.updateLocalStorageTasks(tasks);
 
             }
 
