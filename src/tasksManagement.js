@@ -992,6 +992,9 @@ let taskID = 0;
             tasks.splice(i, 1);
         }
     }
+
+    //THIS WILL DELETE PROJECT'S ATTACHED TASKS FROM LOCAL STORAGE
+    storage.updateLocalStorageTasks(tasks);
    };
 
     
