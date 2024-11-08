@@ -984,6 +984,9 @@ let taskID = 0;
                 obj.project = newName;
             }
         });
+
+        //THIS WILL EDIT PROJECT'S ATTACHED TASKS FROM LOCAL STORAGE TO UPDATED PROJECT'S NAME
+        storage.updateLocalStorageTasks(tasks);
    };
 
    function tasksDeletion(name) {
