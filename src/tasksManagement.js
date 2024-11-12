@@ -684,17 +684,18 @@ let taskID = 0;
 
                 //check task status
                 if (taskDoneCheckbox.checked === false) {
-                    tasks[i].status = false;
+                    relevantTasks[i].status = false;
                     taskDiv.classList.remove('completed');
                 } else {
-                    tasks[i].status = true;
+                    relevantTasks[i].status = true;
                     taskDiv.classList.add('completed');
                 };
+                storage.updateLocalStorageTasks(tasks);
 
             });
 
             //update checkbox status for user after reloading section
-            if (tasks[i].status === false) {
+            if (relevantTasks[i].status === false) {
                 taskDoneCheckbox.checked = false;
                 taskDiv.classList.remove('completed');                
             } else {
