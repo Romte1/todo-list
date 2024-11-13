@@ -928,6 +928,7 @@ let taskID = 0;
                     completedTasks[i].status = true;
                     taskDiv.classList.add('completed');
                 };
+                storage.updateLocalStorageTasks(tasks);
 
             });
 
