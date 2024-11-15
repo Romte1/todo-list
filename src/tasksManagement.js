@@ -282,6 +282,7 @@ let taskID = 0;
             //task option event listeners
 
             let id = currentProjectTasks[i].taskID;
+            console.log('id before event listener:', id);
             let projectName = currentProjectTasks[i].project;
 
             taskEdit.addEventListener('click', () => {
@@ -407,6 +408,7 @@ let taskID = 0;
 
         let eTask = tasks.find(obj => obj.taskID === id );
         console.log ('its', eTask.TaskID);
+        console.log ('id is: ', id);
 
         const body = document.querySelector('body');
         const editTaskModal = document.createElement('dialog');
