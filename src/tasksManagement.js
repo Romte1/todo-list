@@ -1,7 +1,9 @@
 import { format, parseISO, formatDistance, formatRelative, subDays, differenceInDays, parse } from 'date-fns';
 import storage from './localStorage';
 let tasks = storage.getLocalStorageTasks();
-let taskID = 0;
+//HERE WHY APPLY AN UNIQUE TASK ID TO THE UPCOMING ADDED TASKS
+//BY CHECKING THE ONES THAT ALREADY EXIST TO KNOW WHATS THE CURRENT ID
+let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
     function newTask(currentProject) {
         const body = document.querySelector('body');
         const newTaskModal = document.createElement('dialog');
