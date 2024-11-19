@@ -184,6 +184,7 @@ header {
 
     >h1 {
       align-self: center;
+      user-select: none;
     }
     
     .add-task {
