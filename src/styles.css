@@ -212,6 +212,7 @@ header {
     border-radius: 8px;
     padding: 16px 0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4); /* Shadow properties */
+    user-select: none;
 
     >.content-title {
       display: flex;
