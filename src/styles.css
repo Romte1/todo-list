@@ -54,6 +54,7 @@ header {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  user-select: none;
 
   h2{
     padding-left: 5%;
