@@ -19,10 +19,15 @@ body {
   font-family: 'Montserrat';
   display:grid;
   background-color: rgb(57, 72, 199);
-  grid-template-columns: minmax(100px, 400px) minmax(300px, auto);
+  grid-template-columns: minmax(100px, 300px) minmax(300px, auto);
   grid-template-rows: auto 1fr auto;
   padding: 0 32px;
   gap:16px;
+
+  @media screen and (max-width: 600px) {
+    padding: 0 8px;
+    gap:4px;
+  }
 
 
   li, ul, ol {
@@ -172,6 +177,10 @@ header {
   flex-direction: column;
   gap:16px;
 
+  @media screen and (max-width: 800px) {
+      padding: 16px 8px;
+  }
+
   >:first-child {
     display:flex;
     flex-direction: row;
@@ -267,13 +276,15 @@ header {
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
-          max-width: 15ch;
+          max-width: 10ch;
         }
 
         
         .tooltiptext {
           visibility: hidden;
           width: auto;
+          max-width: 100px;
+          word-wrap: break-word;
           background-color: rgb(60, 60, 60);
           color: #fff;
           text-align: center;
