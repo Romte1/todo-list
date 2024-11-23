@@ -96,7 +96,7 @@ function home () {
         document.querySelector('.content').innerHTML = '';
     }
 
-    
+    tasks.loadTasksByDate('Today');
 
 }
 
