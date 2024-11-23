@@ -65,6 +65,10 @@ header {
     padding-left: 5%;
     color:rgb(68, 68, 68);
 
+    @media screen and (max-width: 600px) {
+      font-size:16px;
+    }
+
   }
 
   >div:not(.projects) {
@@ -96,6 +100,10 @@ header {
     >.newProject {
       font-weight: 700;
       color:rgb(78, 204, 74);
+
+      @media screen and (max-width: 600px) {
+        font-size:14px;
+      }
     }
   }
 
@@ -120,6 +128,10 @@ header {
 
       }
 
+      @media screen and (max-width: 600px) {
+        gap:2px;
+      }
+
       &:active{
         background-color: rgba(0, 0, 0, 0.2);
         
@@ -135,6 +147,10 @@ header {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+
+        @media screen and (max-width: 600px) {
+          font-size:14px;
+        }
       }
       
       .del-project {
@@ -148,12 +164,20 @@ header {
           color:white;
           transition: 0.2s;
         }
+
+        @media screen and (max-width: 600px) {
+          font-size:16px;
+        }
       }
 
       .edit-project {
         padding:4px;
         font-size: 20px;
         flex-shrink: 0;
+
+        @media screen and (max-width: 600px) {
+          font-size:16px;
+        }
 
         &:hover {
           background-color: rgb(81, 206, 56);
