@@ -293,7 +293,7 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
 
             taskDelete.addEventListener('click', () => {
                 console.log(id);
-                deleteTask(id, projectName);
+                deleteTask(id, projectName, null);
                 
 
             });
@@ -549,7 +549,7 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
 
     }
 
-    function deleteTask(id, projectName) {
+    function deleteTask(id, projectName, section) {
         console.log('id is:',id);
 
         const body = document.querySelector('body');
@@ -578,7 +578,12 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
             tasks = tasks.filter(item => item.taskID !== id);
             deleteTaskModal.remove();
             storage.updateLocalStorageTasks(tasks);
+            if (section === null) {
             loadTasksList(projectName);
+            } else if (section === 'all') {
+                loadAllTasks();
+                console.log('hola');
+            };
             
         });
 
@@ -751,6 +756,10 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
         const sectionTitle = document.createElement('h1');
         const projectTasks = document.createElement('div');
 
+        let section = 'all';
+
+        document.querySelector('.content').innerHTML = '';
+
         sectionTitle.textContent = 'All Tasks';
 
         projectTasks.setAttribute('class', 'tasks-list');
@@ -840,9 +849,7 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
                 
                 let id = tasks[i].taskID;
                 console.log(id);
-                deleteTask(id);
-                loadTasksList(projectName);
-                
+                deleteTask(id, null, section);
 
             });
 
