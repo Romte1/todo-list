@@ -724,6 +724,10 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
 
             //task option event listeners
 
+            taskEdit.addEventListener('click', () => {
+                console.log('edit task!');
+            });
+
             taskDelete.addEventListener('click', () => {
                 
                 let id = relevantTasks[i].taskID;
