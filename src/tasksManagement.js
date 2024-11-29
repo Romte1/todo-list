@@ -583,6 +583,8 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
             } else if (section === 'all') {
                 loadAllTasks();
                 console.log('hola');
+            } else if (section === 'dateToday') {
+                loadTasksByDate('Today');
             };
             
         });
@@ -612,6 +614,8 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
     }
 
     function loadTasksByDate(dateSection) {
+
+        let section = 'dateToday';
         //firstly the date is normalized with a default time
         const normalizeDate = (date) => {
             const d = new Date(date);
@@ -637,6 +641,8 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
         const projectMain = document.createElement('div');
         const sectionTitle = document.createElement('h1');
         const projectTasks = document.createElement('div');
+
+        document.querySelector('.content').innerHTML = '';
 
         sectionTitle.textContent = dateSection;
 
@@ -724,16 +730,19 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
 
             //task option event listeners
 
+            //let projectName
+
             taskEdit.addEventListener('click', () => {
                 console.log('edit task!');
+
+                //editTask(id, projectName);
             });
 
             taskDelete.addEventListener('click', () => {
                 
                 let id = relevantTasks[i].taskID;
                 console.log(id);
-                deleteTask(id);
-                loadTasksList(projectName);
+                deleteTask(id, null, section);
                 
 
             });
