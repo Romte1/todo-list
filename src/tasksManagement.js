@@ -585,6 +585,8 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
                 console.log('hola');
             } else if (section === 'dateToday') {
                 loadTasksByDate('Today');
+            } else if (section === 'date7Days') {
+                loadTasksByDate('7 Days');
             };
             
         });
@@ -615,7 +617,7 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
 
     function loadTasksByDate(dateSection) {
 
-        let section = 'dateToday';
+        let section = dateSection === 'Today' ? 'dateToday': 'date7Days';
         //firstly the date is normalized with a default time
         const normalizeDate = (date) => {
             const d = new Date(date);
