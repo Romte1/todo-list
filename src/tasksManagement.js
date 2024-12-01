@@ -587,6 +587,8 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
                 loadTasksByDate('Today');
             } else if (section === 'date7Days') {
                 loadTasksByDate('7 Days');
+            } else if (section === 'completed') {
+                loadCompletedTasks();
             };
             
         });
@@ -893,6 +895,10 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
         const sectionTitle = document.createElement('h1');
         const projectTasks = document.createElement('div');
 
+        let section = 'completed';
+
+        document.querySelector('.content').innerHTML = '';
+
         sectionTitle.textContent = 'Completed Tasks';
 
         projectTasks.setAttribute('class', 'tasks-list');
@@ -983,8 +989,7 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
                 
                 let id = completedTasks[i].taskID;
                 console.log(id);
-                deleteTask(id);
-                loadTasksList(projectName);
+                deleteTask(id, null, section);
                 
 
             });
