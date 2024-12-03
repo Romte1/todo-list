@@ -24,7 +24,7 @@ function home () {
     navTodayP.textContent = 'Today';
     navThisWeekP.textContent = '7 Days';
     navAllTasksP.textContent = 'All Tasks';
-    navCompletedTasksP.textContent = 'Completed Tasks';
+    navCompletedTasksP.textContent = 'Completed';
 
     navAddNewProjectP.textContent = 'Add New Project';
     navAddNewProjectP.setAttribute('class','newProject');
