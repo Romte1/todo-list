@@ -282,13 +282,13 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
             taskDoneCheckbox.setAttribute('type', 'checkbox');
 
             //task option event listeners
-
+            let section = null;
             let id = currentProjectTasks[i].taskID;
             console.log('id before event listener:', id);
             let projectName = currentProjectTasks[i].project;
 
             taskEdit.addEventListener('click', () => {
-                editTask(id, projectName);
+                editTask(id, projectName, section);
             })
 
             taskDelete.addEventListener('click', () => {
@@ -406,7 +406,7 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
 
     }
 
-    function editTask(id, projectName) {
+    function editTask(id, projectName, section) {
 
         let eTask = tasks.find(obj => obj.taskID === id );
         console.log ('its', eTask.TaskID);
@@ -496,7 +496,19 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
     
     
                 editTaskModal.remove();
-                loadTasksList(projectName);
+
+                if (section === null) {
+                    loadTasksList(projectName);
+                    } else if (section === 'all') {
+                        loadAllTasks();
+                        console.log('hola');
+                    } else if (section === 'dateToday') {
+                        loadTasksByDate('Today');
+                    } else if (section === 'date7Days') {
+                        loadTasksByDate('7 Days');
+                    } else if (section === 'completed') {
+                        loadCompletedTasks();
+                    };
                 storage.updateLocalStorageTasks(tasks);
 
             }
@@ -734,17 +746,18 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
 
             //task option event listeners
 
-            //let projectName
+            let projectName = relevantTasks[i].project;
+            let id = relevantTasks[i].taskID;
 
             taskEdit.addEventListener('click', () => {
+
                 console.log('edit task!');
 
-                //editTask(id, projectName);
+                editTask(id, projectName, section);
             });
 
             taskDelete.addEventListener('click', () => {
                 
-                let id = relevantTasks[i].taskID;
                 console.log(id);
                 deleteTask(id, null, section);
                 
