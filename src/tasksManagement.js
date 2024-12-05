@@ -751,8 +751,6 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
 
             taskEdit.addEventListener('click', () => {
 
-                console.log('edit task!');
-
                 editTask(id, projectName, section);
             });
 
@@ -875,9 +873,17 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
 
             //task option event listeners
 
+
+            let projectName = tasks[i].project;
+            let id = tasks[i].taskID;
+
+            taskEdit.addEventListener('click', () => {
+
+                editTask(id, projectName, section);
+            });
+
             taskDelete.addEventListener('click', () => {
                 
-                let id = tasks[i].taskID;
                 console.log(id);
                 deleteTask(id, null, section);
 
