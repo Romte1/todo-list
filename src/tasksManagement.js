@@ -1004,6 +1004,14 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
 
             //task option event listeners
 
+            let projectName = completedTasks[i].project;
+            let id = completedTasks[i].taskID;
+
+            taskEdit.addEventListener('click', () => {
+
+                editTask(id, projectName, section);
+            });
+
             taskDelete.addEventListener('click', () => {
                 
                 let id = completedTasks[i].taskID;
