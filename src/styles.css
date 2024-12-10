@@ -37,12 +37,12 @@ body {
 
 header {
     grid-column: span 2;
-    background-color: rgb(224, 224, 224);
+    background-color: rgb(40, 40, 40);
     max-height: 150px;
     align-self: flex-start;
     padding:16px;
     text-align: center;
-    color:rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
     border: var(--custom-border);
     border-radius: 8px;
     user-select: none;
