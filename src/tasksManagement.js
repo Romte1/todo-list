@@ -127,7 +127,7 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
                 tasks.push(task);
                 loadTasksList(currentProject);
                 storage.updateLocalStorageTasks(tasks);
-                console.log(tasks);
+                //console.log(tasks);
 
                 newTaskModal.remove();
 
@@ -197,7 +197,7 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
         let taskDivs = document.querySelectorAll('.task');
 
         const currentProjectTasks = tasks.filter(obj => obj.project === projectName);
-        console.log(currentProjectTasks);
+        //console.log(currentProjectTasks);
 
         taskDivs.forEach(div => {
             div.remove();
@@ -284,7 +284,7 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
             //task option event listeners
             let section = null;
             let id = currentProjectTasks[i].taskID;
-            console.log('id before event listener:', id);
+            //console.log('id before event listener:', id);
             let projectName = currentProjectTasks[i].project;
 
             taskEdit.addEventListener('click', () => {
@@ -292,7 +292,7 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
             })
 
             taskDelete.addEventListener('click', () => {
-                console.log(id);
+                //console.log(id);
                 deleteTask(id, projectName, null);
                 
 
@@ -409,8 +409,8 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
     function editTask(id, projectName, section) {
 
         let eTask = tasks.find(obj => obj.taskID === id );
-        console.log ('its', eTask.TaskID);
-        console.log ('id is: ', id);
+        //console.log ('its', eTask.TaskID);
+        //console.log ('id is: ', id);
 
         const body = document.querySelector('body');
         const editTaskModal = document.createElement('dialog');
@@ -501,7 +501,7 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
                     loadTasksList(projectName);
                     } else if (section === 'all') {
                         loadAllTasks();
-                        console.log('hola');
+                        //console.log('hola');
                     } else if (section === 'dateToday') {
                         loadTasksByDate('Today');
                     } else if (section === 'date7Days') {
@@ -562,7 +562,7 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
     }
 
     function deleteTask(id, projectName, section) {
-        console.log('id is:',id);
+        //console.log('id is:',id);
 
         const body = document.querySelector('body');
         const deleteTaskModal = document.createElement('dialog');
@@ -594,7 +594,7 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
             loadTasksList(projectName);
             } else if (section === 'all') {
                 loadAllTasks();
-                console.log('hola');
+                //console.log('hola');
             } else if (section === 'dateToday') {
                 loadTasksByDate('Today');
             } else if (section === 'date7Days') {
@@ -756,7 +756,7 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
 
             taskDelete.addEventListener('click', () => {
                 
-                console.log(id);
+                //console.log(id);
                 deleteTask(id, null, section);
                 
 
@@ -884,7 +884,7 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
 
             taskDelete.addEventListener('click', () => {
                 
-                console.log(id);
+                //console.log(id);
                 deleteTask(id, null, section);
 
             });
@@ -907,7 +907,7 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
     function loadCompletedTasks() {
 
         const completedTasks = tasks.filter(obj => obj.status === true);
-        console.log(completedTasks);
+        //console.log(completedTasks);
 
         const content = document.querySelector('.content');
         const projectMain = document.createElement('div');
@@ -1015,7 +1015,7 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
             taskDelete.addEventListener('click', () => {
                 
                 let id = completedTasks[i].taskID;
-                console.log(id);
+                //console.log(id);
                 deleteTask(id, null, section);
                 
 
