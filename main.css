@@ -235,7 +235,7 @@ header {
     
     .add-task {
       font-size: 56px;
-      color: rgb(68, 71, 67);
+      color:white;
 
       &:hover {
         color: rgb(81, 206, 56);
@@ -243,7 +243,6 @@ header {
         cursor: pointer;
       }
     }
-
   }
 
   >:nth-child(2) {
