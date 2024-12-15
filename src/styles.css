@@ -216,7 +216,7 @@ header {
     min-height: 60px;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(153, 188, 228);
+    background-color: rgb(40, 40, 40);
     border-radius: 8px;
     padding: 0 16px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
@@ -224,11 +224,12 @@ header {
     >h1 {
       align-self: center;
       user-select: none;
+      color:white;
     }
     
     .add-task {
       font-size: 56px;
-      color: rgb(68, 71, 67);
+      color:white;
 
       &:hover {
         color: rgb(81, 206, 56);
@@ -236,7 +237,6 @@ header {
         cursor: pointer;
       }
     }
-
   }
 
   >:nth-child(2) {
