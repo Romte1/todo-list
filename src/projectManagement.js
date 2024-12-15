@@ -31,14 +31,14 @@ import storage from './localStorage';
                     if (Projects[i].name.toLowerCase() === newProjectIpt.value.toLowerCase()) {
                         newProjectMsg.setAttribute('class', 'error');
                         newProjectMsg.textContent = 'Projects must have an unique name!';
-                        console.log(Projects.length);
+                        //console.log(Projects.length);
                         return;
                     }
                 }
                 var project = new Project(newProjectIpt.value);
                 Projects.push(project);
                 storage.updateLocalStorageProjects(Projects);
-                console.log(Projects.length);
+                //console.log(Projects.length);
                 newProjectModal.remove();
                 updateProjectsList();
             }
@@ -101,13 +101,13 @@ import storage from './localStorage';
 
             projectEdit.addEventListener('click', () => {
                 let name = Projects[i].name;
-                console.log(name);
+                //console.log(name);
                 editProject(name);
             });
 
             projectDel.addEventListener('click', () => {
                 let name = Projects[i].name;
-                console.log(name);
+                //console.log(name);
                 deleteProject(name);
 
             });
@@ -160,7 +160,7 @@ import storage from './localStorage';
                 if (Projects[i].name.toLowerCase() === newName.toLowerCase() && renameProjectIpt.value.toLowerCase() !== name.toLowerCase()) {
                     editProjectMsg.setAttribute('class', 'error');
                     editProjectMsg.textContent = "You cannot rename a project to an existing project's name";
-                    console.log(Projects.length);
+                    //console.log(Projects.length);
                     return;
                 }
             }
@@ -269,7 +269,7 @@ import storage from './localStorage';
     function defaultProject() {
 
         let defaultPage = JSON.parse(localStorage.getItem('defaultP'));
-        console.log(defaultPage);
+        //console.log(defaultPage);
 
         if (defaultPage === null) {
             const defaultProject = new Project('Default Project');
@@ -279,7 +279,7 @@ import storage from './localStorage';
             Projects = storage.getLocalStorageProjects();
         }
         updateProjectsList();
-        console.log(Projects);
+        //console.log(Projects);
         defaultPage = false;
         localStorage.setItem('defaultP', JSON.stringify(defaultPage));
         
@@ -317,7 +317,7 @@ import storage from './localStorage';
         content.appendChild(projectTasks);
 
         tasks.loadTasksList(name);
-        console.log('project name is :', name)
+        //console.log('project name is :', name)
     }
 
     function removeContent() {
