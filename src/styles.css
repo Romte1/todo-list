@@ -916,6 +916,7 @@ footer {
   text-align: center;
   border: var(--custom-border);
   border-radius: 8px;
+  user-select: none;
 
 }
 
