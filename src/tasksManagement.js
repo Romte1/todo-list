@@ -1,4 +1,4 @@
-import { format, parseISO, formatDistance, formatRelative, subDays, differenceInDays, parse } from 'date-fns';
+import { format, parseISO, differenceInDays, parse } from 'date-fns';
 import storage from './localStorage';
 let tasks = storage.getLocalStorageTasks();
 //HERE WHY APPLY AN UNIQUE TASK ID TO THE UPCOMING ADDED TASKS
@@ -1040,7 +1040,7 @@ let taskID = tasks.length !== 0 ? tasks[tasks.length - 1].taskID : 0;
    }
 
    function tasksProjectNameChanger(name, newName) {
-        const updateTasksProjectName = tasks.forEach(obj => {
+        tasks.forEach(obj => {
             if (obj.project === name) {
                 obj.project = newName;
             }

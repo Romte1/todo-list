@@ -2,7 +2,6 @@ import newProject from './projectManagement';
 import tasks from './tasksManagement';
 
 function home () {
-    const content = document.querySelector('.content');
     const navigator = document.querySelector('.nav');
     const navMenuTitle1 = document.createElement('h2');
     const navMenuTitle2 = document.createElement('h2');
