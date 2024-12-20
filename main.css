@@ -10,144 +10,138 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  padding:0;
-  margin:0;
+  padding: 0;
+  margin: 0;
 }
 
 :root {
   --custom-border: 2px solid rgb(35, 35, 35);
 }
 
-
-
 body {
   min-height: 100dvh;
-  font-family: 'Montserrat';
-  display:grid;
+  font-family: "Montserrat";
+  display: grid;
   background-color: rgb(30, 30, 30);
   grid-template-columns: minmax(100px, 300px) minmax(300px, auto);
   grid-template-rows: auto 1fr auto;
   padding: 0 32px;
-  gap:16px;
+  gap: 16px;
 
   @media screen and (max-width: 600px) {
     padding: 0 8px;
-    gap:4px;
+    gap: 4px;
   }
 
-
-  li, ul, ol {
+  li,
+  ul,
+  ol {
     list-style: none;
   }
 }
 
 header {
-    grid-column: span 2;
-    background-color: rgb(40, 40, 40);
-    max-height: 150px;
-    align-self: flex-start;
-    padding:16px;
-    text-align: center;
-    color:rgb(255, 255, 255);
-    border: var(--custom-border);
-    border-radius: 8px;
-    user-select: none;
+  grid-column: span 2;
+  background-color: rgb(40, 40, 40);
+  max-height: 150px;
+  align-self: flex-start;
+  padding: 16px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  border: var(--custom-border);
+  border-radius: 8px;
+  user-select: none;
 }
 
 .nav {
   background-color: rgb(40, 40, 40);
   border: var(--custom-border);
   border-radius: 8px;
-  display:flex;
+  display: flex;
   flex-direction: column;
-  padding:16px 0;
+  padding: 16px 0;
   justify-content: flex-start;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   user-select: none;
 
-  h2{
+  h2 {
     padding-left: 5%;
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
 
     @media screen and (max-width: 600px) {
-      font-size:16px;
+      font-size: 16px;
     }
-
   }
 
-  >div:not(.projects) {
+  > div:not(.projects) {
     height: 35px;
     width: 100%;
-    display:flex;
+    display: flex;
     align-items: center;
     cursor: pointer;
 
-    
-    &:hover{
+    &:hover {
       background-color: rgb(60, 60, 60);
-      transition:0.2s;
-
+      transition: 0.2s;
     }
 
-    &:active{
+    &:active {
       background-color: rgb(80, 80, 80);
     }
 
-    >p{
+    > p {
       padding-left: 7.5%;
       width: 100%;
       height: 100%;
       display: flex;
       align-items: center;
-      color:rgb(255, 255, 255);
+      color: rgb(255, 255, 255);
       font-weight: 500;
     }
 
-    >.newProject {
+    > .newProject {
       font-weight: 700;
-      color:rgb(78, 204, 74);
+      color: rgb(78, 204, 74);
 
       @media screen and (max-width: 600px) {
-        font-size:14px;
+        font-size: 14px;
       }
     }
   }
 
   .projects {
-    display:flex;
+    display: flex;
     flex-direction: column;
     height: auto;
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     font-weight: 500;
 
-    >div {
+    > div {
       min-height: 35px;
       width: 100%;
-      display:flex;
+      display: flex;
       align-items: center;
       justify-content: flex-end;
       cursor: pointer;
-      gap:4px;
+      gap: 4px;
       padding-right: 4px;
-      
-      &:hover{
-        background-color: rgb(60, 60, 60);
-        transition:0.2s;
 
+      &:hover {
+        background-color: rgb(60, 60, 60);
+        transition: 0.2s;
       }
 
       @media screen and (max-width: 600px) {
-        gap:2px;
+        gap: 2px;
       }
 
-      &:active{
+      &:active {
         background-color: rgb(80, 80, 80);
-        
       }
-  
-      >p{
+
+      > p {
         padding-left: 7.5%;
         height: 100%;
         width: 100%;
@@ -159,47 +153,45 @@ header {
         text-overflow: ellipsis;
 
         @media screen and (max-width: 600px) {
-          font-size:14px;
+          font-size: 14px;
         }
       }
-      
+
       .del-project {
-        padding:4px;
+        padding: 4px;
         font-size: 20px;
         flex-shrink: 0;
 
         &:hover {
           background-color: rgb(230, 55, 55);
           border-radius: 8px;
-          color:white;
+          color: white;
           transition: 0.2s;
         }
 
         @media screen and (max-width: 600px) {
-          font-size:16px;
+          font-size: 16px;
         }
       }
 
       .edit-project {
-        padding:4px;
+        padding: 4px;
         font-size: 20px;
         flex-shrink: 0;
 
         @media screen and (max-width: 600px) {
-          font-size:16px;
+          font-size: 16px;
         }
 
         &:hover {
           background-color: rgb(81, 206, 56);
           border-radius: 8px;
-          color:white;
+          color: white;
           transition: 0.2s;
         }
       }
-
     }
   }
-
 }
 
 .content {
@@ -209,16 +201,16 @@ header {
   padding: 16px 64px;
   display: flex;
   flex-direction: column;
-  gap:16px;
+  gap: 16px;
 
   @media screen and (max-width: 800px) {
-      padding: 16px 8px;
+    padding: 16px 8px;
   }
 
-  >:first-child {
-    display:flex;
+  > :first-child {
+    display: flex;
     flex-direction: row;
-    gap:8px;
+    gap: 8px;
     min-height: 60px;
     justify-content: space-between;
     align-items: center;
@@ -227,15 +219,15 @@ header {
     padding: 0 16px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
 
-    >h1 {
+    > h1 {
       align-self: center;
       user-select: none;
-      color:white;
+      color: white;
     }
-    
+
     .add-task {
       font-size: 56px;
-      color:white;
+      color: white;
 
       &:hover {
         color: rgb(81, 206, 56);
@@ -245,10 +237,10 @@ header {
     }
   }
 
-  >:nth-child(2) {
+  > :nth-child(2) {
     display: flex;
     flex-direction: column;
-    gap:4px;
+    gap: 4px;
     height: 100%;
     width: 100%;
     background-color: rgb(224, 224, 224);
@@ -257,17 +249,17 @@ header {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4); /* Shadow properties */
     user-select: none;
 
-    >.content-title {
+    > .content-title {
       display: flex;
       align-items: center;
-      
+
       box-shadow: 0px 4px 4px -2px rgba(0, 0, 0, 0.4); /* Shadow properties */
 
       > * {
         flex: 1 1 20%;
       }
 
-      >p {
+      > p {
         flex-grow: 1;
         display: flex;
         justify-content: center;
@@ -275,12 +267,11 @@ header {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        font-size:14px;
+        font-size: 14px;
       }
-
     }
 
-    >.task {
+    > .task {
       height: 32px;
       display: flex;
       align-items: center;
@@ -291,21 +282,20 @@ header {
         flex: 1 1 20%;
       }
 
-      &:hover{
+      &:hover {
         background-color: rgba(0, 0, 0, 0.1);
         cursor: pointer;
         border-bottom: 2px solid black;
         border-right: 2px solid black;
-  
       }
 
-      >.descriptionDiv {
+      > .descriptionDiv {
         flex-grow: 1;
         display: flex;
         justify-content: center;
         position: relative;
 
-        >p {
+        > p {
           display: flex;
           justify-content: left;
           white-space: nowrap;
@@ -314,7 +304,6 @@ header {
           max-width: 10ch;
         }
 
-        
         .tooltiptext {
           visibility: hidden;
           width: auto;
@@ -325,7 +314,7 @@ header {
           text-align: center;
           border-radius: 4px;
           padding: 2px 4px;
-          
+
           /* Position the tooltip */
           position: absolute;
           z-index: 1;
@@ -333,13 +322,12 @@ header {
           left: 50%;
           transform: translateX(-50%);
         }
-        
+
         &:hover .tooltiptext {
-            visibility: visible;
-            
+          visibility: visible;
         }
       }
-      >p {
+      > p {
         flex-grow: 1;
         display: flex;
         justify-content: center;
@@ -352,9 +340,9 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap:4px;
+        gap: 4px;
 
-        >input {
+        > input {
           display: inline-block;
           width: 16px;
           height: 16px;
@@ -369,34 +357,31 @@ header {
         }
 
         .del-task {
-          padding:4px;
-  
+          padding: 4px;
+
           &:hover {
             background-color: rgb(230, 55, 55);
             border-radius: 8px;
-            color:white;
+            color: white;
             transition: 0.2s;
           }
         }
-  
+
         .edit-task {
-          padding:4px;
-  
+          padding: 4px;
+
           &:hover {
             background-color: rgb(81, 206, 56);
             border-radius: 8px;
-            color:white;
+            color: white;
             transition: 0.2s;
           }
         }
-
       }
-
-
     }
 
     .low {
-      border-left: 5px solid rgb(0,255,0);
+      border-left: 5px solid rgb(0, 255, 0);
       border-radius: 5px;
     }
 
@@ -414,15 +399,10 @@ header {
       background-color: rgb(191, 235, 170);
 
       &:hover {
-        background-color: rgb(143, 230, 99)
-        
+        background-color: rgb(143, 230, 99);
       }
     }
-
-
   }
-
-
 }
 
 dialog.modal {
@@ -430,12 +410,12 @@ dialog.modal {
   grid-template-columns: auto 1fr;
   grid-template-rows: auto auto auto auto;
   gap: 8px;
-  padding:16px;
+  padding: 16px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  padding:32px;
+  padding: 32px;
   background: rgb(241, 241, 241);
   border-radius: 8px;
   width: 300px;
@@ -446,21 +426,21 @@ dialog.modal {
   }
 
   &::backdrop {
-      backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
   }
 
-  >p {
+  > p {
     font-size: 28px;
     grid-row: 1;
     grid-column: 1/3;
   }
 
-  >label { 
+  > label {
     grid-row: 2;
     align-self: center;
   }
 
-  >input {
+  > input {
     width: 100%;
     height: 28px;
     grid-row: 2;
@@ -469,7 +449,7 @@ dialog.modal {
     padding-left: 5px;
     align-self: center;
   }
-  >label.error {
+  > label.error {
     grid-row: 3;
     grid-column: 1/3;
     width: 100%;
@@ -480,25 +460,21 @@ dialog.modal {
     padding: 4px 8px;
     border-radius: 4px;
     border: 1px solid black;
-    color:white;
+    color: white;
   }
 
-  >button {
-      padding: 8px 16px;
-      border-radius: 8px;
-      grid-row: 4;
-      grid-column: 1/3;
-      font-weight: 800;
+  > button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    grid-row: 4;
+    grid-column: 1/3;
+    font-weight: 800;
 
-      &:hover {
-        background-color: rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-      }
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
   }
-
-
-  
-
 }
 
 dialog.modal-edit-project {
@@ -509,7 +485,7 @@ dialog.modal-edit-project {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding:32px;
+  padding: 32px;
   background: rgb(241, 241, 241);
   border-radius: 8px;
   width: 300px;
@@ -520,17 +496,17 @@ dialog.modal-edit-project {
   }
 
   &::backdrop {
-      backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
   }
 
-  >p {
+  > p {
     font-size: 20px;
     grid-row: 1;
     grid-column: 1/3;
     text-align: center;
   }
 
-  >input {
+  > input {
     outline: none;
     height: 28px;
     border-radius: 4px;
@@ -541,7 +517,7 @@ dialog.modal-edit-project {
     text-align: center;
   }
 
-  >label.error {
+  > label.error {
     grid-row: 3;
     grid-column: 1/3;
     width: 100%;
@@ -553,24 +529,24 @@ dialog.modal-edit-project {
     padding: 4px 8px;
     border-radius: 4px;
     border: 1px solid black;
-    color:white;
+    color: white;
   }
 
-  >button.btn-confirm {
-      padding: 8px 16px;
-      border-radius: 8px;
-      grid-row: 4;
-      grid-column: 1;
-      font-weight: 800;
+  > button.btn-confirm {
+    padding: 8px 16px;
+    border-radius: 8px;
+    grid-row: 4;
+    grid-column: 1;
+    font-weight: 800;
 
-      &:hover {
-        background-color: rgb(81, 206, 56);
-        cursor: pointer;
-        color: white;
-      }
+    &:hover {
+      background-color: rgb(81, 206, 56);
+      cursor: pointer;
+      color: white;
+    }
   }
 
-  >button.btn-cancel {
+  > button.btn-cancel {
     padding: 8px 16px;
     border-radius: 8px;
     grid-row: 4;
@@ -582,8 +558,7 @@ dialog.modal-edit-project {
       cursor: pointer;
       color: white;
     }
-}
-
+  }
 }
 
 dialog.modal-delete-project {
@@ -591,41 +566,41 @@ dialog.modal-delete-project {
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
   gap: 16px;
-  padding:16px;
+  padding: 16px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  padding:32px;
+  padding: 32px;
   background: rgb(241, 241, 241);
   border-radius: 8px;
   width: 300px;
 
   &::backdrop {
-      backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
   }
 
-  >p {
+  > p {
     font-size: 20px;
     grid-row: 1;
     grid-column: 1/3;
   }
 
-  >button.btn-confirm {
-      padding: 8px 16px;
-      border-radius: 8px;
-      grid-row: 2;
-      grid-column: 1;
-      font-weight: 800;
+  > button.btn-confirm {
+    padding: 8px 16px;
+    border-radius: 8px;
+    grid-row: 2;
+    grid-column: 1;
+    font-weight: 800;
 
-      &:hover {
-        background-color: rgba(255, 10, 10, 0.7);
-        cursor: pointer;
-        color: white;
-      }
+    &:hover {
+      background-color: rgba(255, 10, 10, 0.7);
+      cursor: pointer;
+      color: white;
+    }
   }
 
-  >button.btn-cancel {
+  > button.btn-cancel {
     padding: 8px 16px;
     border-radius: 8px;
     grid-row: 2;
@@ -636,8 +611,7 @@ dialog.modal-delete-project {
       background-color: rgba(0, 0, 0, 0.1);
       cursor: pointer;
     }
-}
-
+  }
 }
 
 dialog.modal-new-task {
@@ -649,11 +623,11 @@ dialog.modal-new-task {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  padding:32px;
+  padding: 32px;
   background: rgb(241, 241, 241);
   border-radius: 8px;
   width: 400px;
-  display:flex;
+  display: flex;
   flex-direction: column;
 
   ::selection {
@@ -662,16 +636,16 @@ dialog.modal-new-task {
   }
 
   &::backdrop {
-      backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
   }
 
-  >p {
+  > p {
     font-size: 28px;
     grid-row: 1;
     grid-column: 1/3;
   }
 
-  >label.error {
+  > label.error {
     grid-row: 3;
     grid-column: 1/3;
     width: 100%;
@@ -682,20 +656,19 @@ dialog.modal-new-task {
     padding: 4px 8px;
     border-radius: 4px;
     border: 1px solid black;
-    color:white;
+    color: white;
   }
-
 
   div {
     display: flex;
     gap: 8px;
     justify-content: space-between;
 
-    >label { 
+    > label {
       align-self: center;
     }
-  
-    >input {
+
+    > input {
       width: 220px;
       height: 28px;
       outline: none;
@@ -705,7 +678,7 @@ dialog.modal-new-task {
       border: 1px solid black;
     }
 
-    >select {
+    > select {
       width: 220px;
       height: 28px;
       grid-row: 2;
@@ -717,48 +690,41 @@ dialog.modal-new-task {
       border: 1px solid black;
     }
 
-    >button {
+    > button {
       width: 33%;
       padding: 8px 16px;
       border-radius: 8px;
       font-weight: 800;
     }
 
-    >.btn-add {
-
+    > .btn-add {
       &:hover {
         background-color: rgb(81, 206, 56);
         cursor: pointer;
         color: white;
       }
-
     }
 
-    >.btn-clear {
-
+    > .btn-clear {
       &:hover {
         background-color: rgba(0, 0, 0, 0.1);
         cursor: pointer;
       }
-
     }
 
-    >.btn-cancel {
-
+    > .btn-cancel {
       &:hover {
         background-color: rgba(255, 10, 10, 0.7);
         cursor: pointer;
         color: white;
       }
-
     }
-
   }
 
   .error-container {
     height: 24px;
 
-    >.error-msg {
+    > .error-msg {
       grid-row: 3;
       grid-column: 1/3;
       width: 100%;
@@ -769,13 +735,9 @@ dialog.modal-new-task {
       padding: 4px 8px;
       border-radius: 4px;
       border: 1px solid black;
-      color:white;
+      color: white;
     }
   }
-
-
-  
-
 }
 
 .modal-edit-task {
@@ -787,20 +749,20 @@ dialog.modal-new-task {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  padding:32px;
+  padding: 32px;
   background: rgb(241, 241, 241);
   border-radius: 8px;
   width: 400px;
-  display:flex;
+  display: flex;
   flex-direction: column;
 
-  >p {
+  > p {
     font-size: 28px;
     grid-row: 1;
     grid-column: 1/3;
   }
 
-  >label { 
+  > label {
     align-self: center;
   }
 
@@ -809,11 +771,11 @@ dialog.modal-new-task {
     gap: 8px;
     justify-content: space-between;
 
-    >label { 
+    > label {
       align-self: center;
     }
-  
-    >input {
+
+    > input {
       width: 220px;
       height: 28px;
       outline: none;
@@ -823,7 +785,7 @@ dialog.modal-new-task {
       border: 1px solid black;
     }
 
-    >select {
+    > select {
       width: 220px;
       height: 28px;
       grid-row: 2;
@@ -835,36 +797,31 @@ dialog.modal-new-task {
       border: 1px solid black;
     }
 
-    >button {
+    > button {
       width: 33%;
       padding: 8px 16px;
       border-radius: 8px;
       font-weight: 800;
     }
 
-    >.btn-confirm {
-
+    > .btn-confirm {
       &:hover {
         background-color: rgb(81, 206, 56);
         cursor: pointer;
         color: white;
       }
-
     }
 
-    >.btn-cancel {
-
+    > .btn-cancel {
       &:hover {
         background-color: rgba(255, 10, 10, 0.7);
         cursor: pointer;
         color: white;
       }
-
     }
-
   }
 
-  >input {
+  > input {
     width: 220px;
     height: 28px;
     outline: none;
@@ -874,7 +831,7 @@ dialog.modal-new-task {
     border: 1px solid black;
   }
 
-  >select {
+  > select {
     width: 220px;
     height: 28px;
     grid-row: 2;
@@ -889,7 +846,7 @@ dialog.modal-new-task {
   .error-container {
     height: 24px;
 
-    >.error-msg {
+    > .error-msg {
       grid-row: 3;
       grid-column: 1/3;
       width: 100%;
@@ -900,42 +857,39 @@ dialog.modal-new-task {
       padding: 4px 8px;
       border-radius: 4px;
       border: 1px solid black;
-      color:white;
+      color: white;
     }
   }
-
 }
 
 footer {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap:4px;
+  gap: 4px;
   grid-column: span 2;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
   background-color: rgb(40, 40, 40);
   max-height: 150px;
   align-self: flex-end;
-  padding:16px;
-  color:yellow;
+  padding: 16px;
+  color: yellow;
   text-align: center;
   border: var(--custom-border);
   border-radius: 8px;
   user-select: none;
-
 }
 
 .githubIcon {
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   transition: 0.3s;
   font-size: 24px;
   display: flex;
 
-  >:hover {
-
-      color:red;
-      font-size: 24px;
-
+  > :hover {
+    color: red;
+    font-size: 24px;
   }
 }
+
