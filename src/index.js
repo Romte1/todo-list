@@ -1,8 +1,5 @@
 import "./styles.css";
 
-import pageLoad from './pageLoad';
-
-
+import pageLoad from "./pageLoad";
 
 pageLoad();
-

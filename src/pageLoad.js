@@ -1,7 +1,7 @@
-import createPage from './todoList';
+import createPage from "./todoList";
 
 function initialPage() {
-    createPage();
+  createPage();
 }
 
-export default initialPage
+export default initialPage;
